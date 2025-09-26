@@ -44,12 +44,21 @@ section {
   text-align: center;  
 }
 
-.project-image {
+.project-banner {
   text-align: center;
   margin: 15px 0;
   width: 900px;
   height: auto;
   max-width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.project-image {
+  text-align: center;
+  margin: 15px 0;  
+  max-width: 900px;
+  height: auto;  
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
