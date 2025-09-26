@@ -8,17 +8,14 @@
     <link rel="stylesheet" href="style/style.css" />
 
     <script type="text/javascript" src="libs/i18next.min.js" defer></script>
-    <script
-      type="text/javascript"
-      src="scripts/sectionloader.js"
-      defer
-    ></script>
+    <script type="module" src="scripts/summaryLoader.js" defer></script>
+    <script type="module" src="scripts/detailsLoader.js" defer></script>
   </head>
   <body>
     <header>
       <nav>
         <a href="#about">About</a>
-        <a href="#projects">Projects</a>
+        <a href="#procedural-dungeon">Projects</a>
         <a href="#contact">Contact</a>
       </nav>
     </header>
@@ -28,52 +25,24 @@
         <h1>Hi, I'm Marko Cetinic</h1>
         <p>
           I am a Software Developer with a passion for Game Development. This is
-          my portfolio where you can see some of my work.
+          my portfolio where you can see a collection of my personal and
+          professional projects.
         </p>
+
+        <h2>Projects</h2>
+        <a href="#procedural-dungeon">View Projects</a>
       </section>
 
-      <section id="projects">
-        <h2>Procedural Dungeon Generation</h2>
-
-        <div>
-          <a
-            href="https://github.com/macetini/ProceduralGeneration"
-            target="_blank"
-            >View on GitHub</a
-          >
-        </div>
-        <div>
-          <a
-            href="https://macetini.github.io/ProceduralGeneration/Builds/DungeonScene/"
-            target="_blank"
-            >Demo 1</a
-          >
-        </div>
-        <div>
-          <a
-            href="https://macetini.github.io/ProceduralGeneration/Builds/NodeScene/"
-            target="_blank"
-            >Demo 2</a
-          >
-        </div>
-
-        <p>
-          A Procedural dungeon generation system built in Unity using C#. It
-          generates dungeons by creating and connecting elements, such as rooms
-          and corridors, using a combination of randomization and algorithms.
-        </p>
-        <div class="project-item-container">
-          <img
-            class="project-banner"
-            src="img/proceduralgeneration/procedural_generation_banner.png"
-            alt="Dungeon Generation Project Banner"
-            loading="lazy"
-          />
+      <section id="procedural-dungeon" class="project-card">
+        <div
+          id="procedural-dungeon-summary"
+          data-content-url="sections/procedural-dungeon-summary.html"
+        >
+          <p>Loading project summary...</p>
         </div>
 
         <details data-content-url="sections/procedural-dungeon-details.html">
           <summary>View Details and Technical Breakdown</summary>
-
           <div class="content-placeholder"></div>
         </details>
       </section>
@@ -85,7 +54,10 @@
           or connect with me on LinkedIn.
         </p>
         <a href="mailto:macetini@gmail.com" class="button">Send an Email</a>
-        <a href="www.linkedin.com/in/macetini" target="_blank" class="button"
+        <a
+          href="https://linkedin.com/in/macetini"
+          target="_blank"
+          class="button"
           >LinkedIn</a
         >
       </section>
