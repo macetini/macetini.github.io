@@ -2,14 +2,17 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
     <title>macetini</title>
 
-    <script type="text/javascript" src="libs/i18next.min.js"></script>
-
     <link rel="stylesheet" href="style/style.css" />
+
+    <script type="text/javascript" src="libs/i18next.min.js" defer></script>
+    <script
+      type="text/javascript"
+      src="scripts/sectionloader.js"
+      defer
+    ></script>
   </head>
   <body>
     <header>
@@ -30,126 +33,49 @@
       </section>
 
       <section id="projects">
-        <h2>My Projects</h2>
+        <h2>Procedural Dungeon Generation</h2>
 
-        <div class="project-card">
-          <h3>Procedural Dungeon Generation</h3>
-          <p>
-            A Procedural dungeon generation system built in Unity using C#. It
-            generates dungeons by creating and connecting elements, such as
-            rooms and corridors, using a combination of randomization and
-            algorithms.
-          </p>
-
-          <div class="project-item-container">
-            <img
-              class="project-banner"
-              src="img/proceduralgeneration/procedural_generation_banner.png"
-              alt="Dungeon Generation Project Banner"
-            />
-          </div>
-
-          <p>
-            A Procedural dungeon generation system built in Unity using C#. It
-            generates dungeons by creating and connecting elements, such as
-            rooms and corridors, using a combination of randomization and
-            algorithms.
-          </p>
-
-          <div class="project-item-container">
-            <img
-              class="project-gif"
-              src="img/proceduralgeneration/dungeon_anim.gif"
-              alt="Dungeon Generation Animation"
-            />
-            <p>Dungeon</p>
-          </div>
-
-          <div class="project-item-container">
-            <img
-              class="project-image"
-              src="img/proceduralgeneration/spwanzone_inspector.png"
-              alt="Spawn Zone Inspector"
-            />
-            <p>Zone</p>
-          </div>
-
-          <div class="project-item-container">
-            <img
-              class="project-image"
-              src="img/proceduralgeneration/zone_inspector.png"
-              alt="Spawn Zone Inspector"
-            />
-            <p>Zone Item</p>
-          </div>
-
-          <div class="project-item-container">
-            <img
-              class="project-image"
-              src="img/proceduralgeneration/dungeon_set_blue_inspector.png"
-              alt="Spawn Zone Inspector"
-            />
-            <img
-              class="project-image"
-              src="img/proceduralgeneration/dungeon_set_default_inspector.png"
-              alt="Spawn Zone Inspector"
-            />
-            <p>Zone Item</p>
-          </div>
-
-          <div class="project-item-container">
-            <img
-              class="project-image"
-              src="img/proceduralgeneration/spawn_room_item_inspector.png"
-              alt="Spawn Zone Inspector"
-            />
-
-            <p>Spawn Room Item</p>
-          </div>
-
-          <div class="project-item-container">
-            <img
-              class="project-gif"
-              src="img/proceduralgeneration/room_anim.gif"
-              alt="Dungeon Generation Animation"
-            />
-            <p>Room</p>
-          </div>
-
-          <div class="project-item-container">
-            <img
-              class="project-image"
-              src="img/proceduralgeneration/room_1_blueprint_inspector.png"
-              alt="Spawn Zone Inspector"
-            />
-
-            <p>Spawn Room Item</p>
-          </div>
-
-          <div class="project-item-container">
-            <img
-              class="project-image"
-              src="img/proceduralgeneration/room_item_with_conditions_inspector.png"
-              alt="Spawn Zone Inspector"
-            />
-
-            <p>Spawn Room Item</p>
-          </div>
-
-          <a href="https://github.com/your-username/project-one" target="_blank"
+        <div>
+          <a
+            href="https://github.com/macetini/ProceduralGeneration"
+            target="_blank"
             >View on GitHub</a
           >
         </div>
-        <div class="project-card">
-          <h3>Project Two</h3>
-          <p>
-            A brief description of your second project. Describe what it does
-            and why it's cool.
-          </p>
-          <a href="https://github.com/your-username/project-two" target="_blank"
-            >View on GitHub</a
+        <div>
+          <a
+            href="https://macetini.github.io/ProceduralGeneration/Builds/DungeonScene/"
+            target="_blank"
+            >Demo 1</a
           >
         </div>
+        <div>
+          <a
+            href="https://macetini.github.io/ProceduralGeneration/Builds/NodeScene/"
+            target="_blank"
+            >Demo 2</a
+          >
+        </div>
+
+        <p>
+          A Procedural dungeon generation system built in Unity using C#. It
+          generates dungeons by creating and connecting elements, such as rooms
+          and corridors, using a combination of randomization and algorithms.
+        </p>
+        <div class="project-item-container">
+          <img
+            class="project-banner"
+            src="img/proceduralgeneration/procedural_generation_banner.png"
+            alt="Dungeon Generation Project Banner"
+            loading="lazy"
+          />
+        </div>
+
+        <details data-content-url="sections/procedural-dungeon-details.html">
+          <summary>View Details and Technical Breakdown</summary>
+
+          <div class="content-placeholder"></div>
+        </details>
       </section>
 
       <section id="contact">
@@ -158,11 +84,8 @@
           I'm open to new opportunities. Feel free to reach out to me via email
           or connect with me on LinkedIn.
         </p>
-        <a href="mailto:your.email@example.com" class="button">Send an Email</a>
-        <a
-          href="https://www.linkedin.com/in/your-profile"
-          target="_blank"
-          class="button"
+        <a href="mailto:macetini@gmail.com" class="button">Send an Email</a>
+        <a href="www.linkedin.com/in/macetini" target="_blank" class="button"
           >LinkedIn</a
         >
       </section>
