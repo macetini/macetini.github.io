@@ -28,13 +28,13 @@ main {
 
 section {
   background: #fff;
-  padding: 20px; 
+  padding: 20px;
   margin-bottom: 20px;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.button {
+button {
   display: inline-block;
   background: #007bff;
   color: #fff;
@@ -49,98 +49,4 @@ footer {
   padding: 20px 0;
   background: #333;
   color: #fff;
-}
-
-.project-card {
-  border-left: 5px solid #282f36;
-  padding-left: 15px; 
-  margin-bottom: 15px;
-}
-
-.project-item-container { 
-  text-align: center;
-}
-
-.project-banner, .project-gif {
-  text-align: center;
-  margin: 15px 0; 
-  height: auto;
-  max-width: 100%;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-.project-gif {
-  width: auto; 
-}
-
-
-.project-image {
-  margin: 0; 
-  max-width: 100%;
-  height: auto;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-/* -------------------------------------------------------- */
-/* --- Image Row Styling (Desktop/Default) --- */
-/* -------------------------------------------------------- */
-
-.image-row {
-  display: flex;
-  flex-direction: row; 
-  /* FIX: Use space-around to center the block and distribute space */
-  justify-content: space-around;  
-  gap: 10px; 
-  
-  /* Allow the row to fill the parent section's width for alignment */
-  max-width: 100%; 
-  margin: 15px 0; 
-}
-
-/* 🚀 SCALING FIX: Anchor tags (Flex Items) are set to 48% */
-.image-row .lightbox-trigger {
-  display: block; 
-  flex-grow: 1; 
-  /* Reduced size for scaling down */
-  flex-basis: 42%; 
-  width: 42%;
-  max-width: 42%;
-}
-
-/* Image Sizing (Applied to image inside anchor) */
-.image-row .lightbox-trigger .project-image {
-  width: 100%;
-  max-width: 100%;
-}
-
-
-/* -------------------------------------------------------- */
-/* --- Media Query: Mobile Overrides (Images Stacked) --- */
-/* -------------------------------------------------------- */
-@media (max-width: 800px) {
-  
-  /* Container (image-row) overrides */
-  .image-row {
-    flex-direction: column; /* Images stack vertically */
-    /* On mobile, reset justify-content to default for clean stacking */
-    justify-content: flex-start; 
-    max-width: 100%; 
-    margin: 15px 0; 
-  }
-
-  /* Reset the aggressive negative margins for stacking */
-  .project-card .image-row {
-    margin-left: 0 !important; 
-    margin-right: 0 !important;
-    padding: 0;
-  }
-  
-  /* Image/Anchor Sizing overrides for stacking (100% width) */
-  .image-row .lightbox-trigger {
-    flex-basis: 100%; 
-    width: 100%;
-    max-width: 100%;
-    margin-bottom: 10px; 
-  }
 }
