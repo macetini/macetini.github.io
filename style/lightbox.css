@@ -27,8 +27,8 @@
 .lightbox-close {
   /* Style for the 'X' close button */
   position: absolute;
-  top: 10px;
-  right: 15px;
+  top: 5px;
+  right: 30px;
   color: #f1f1f1;
   font-size: 40px;
   font-weight: bold;
