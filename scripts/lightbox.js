@@ -13,6 +13,7 @@ function initializeLightboxTriggers() {
       const fullImageUrl = trigger.getAttribute("href");
       lightboxImg.setAttribute("src", fullImageUrl);
       lightbox.style.display = "block";
+      document.body.style.overflow = 'hidden'; 
     });
   });
 
@@ -20,6 +21,7 @@ function initializeLightboxTriggers() {
   if (closeBtn) {
     closeBtn.addEventListener("click", () => {
       lightbox.style.display = "none";
+      document.body.style.overflow = 'auto'; 
     });
   }
 
@@ -27,6 +29,7 @@ function initializeLightboxTriggers() {
   lightbox.addEventListener("click", (e) => {
     if (e.target.classList.contains("lightbox")) {
       lightbox.style.display = "none";
+      document.body.style.overflow = 'auto'; 
     }
   });
 }
