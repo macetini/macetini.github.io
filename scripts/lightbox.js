@@ -12,7 +12,7 @@ function initializeLightboxTriggers() {
       e.preventDefault();
       const fullImageUrl = trigger.getAttribute("href");
       lightboxImg.setAttribute("src", fullImageUrl);
-      lightbox.style.display = "block";      
+      lightbox.style.display = "flex";      
     });
   });
 

@@ -1,10 +1,10 @@
 .lightbox {
-  /* Hidden by default */
-  display: none;
   /* Full screen overlay */
-  position: fixed;
-  z-index: 100; /* Ensure it's on top of everything */
-  padding-top: 50px; /* Space from the top */
+  display: none;
+  align-items: center; /* Center item vertically */
+  justify-content: center; /* Center item horizontally */
+  position: fixed; /* Stay in place */
+  z-index: 100; /* Ensure it's on top of everything */  
   left: 0;
   top: 0;
   width: 100%;
@@ -14,10 +14,10 @@
 }
 
 .lightbox-content {
-  height: auto;
-  max-width: 90%;
+  max-width: 97%;
+  max-height: 100%;
   display: block;
-  margin: 30px auto;
+  margin: 0 auto;
   -webkit-animation-name: zoom;
   -webkit-animation-duration: 0.6s;
   animation-name: zoom;
@@ -27,8 +27,8 @@
 .lightbox-close {
   /* Style for the 'X' close button */
   position: absolute;
-  top: 5px;
-  right: 30px;
+  top: -10px;
+  right: 10px;
   color: #f1f1f1;
   font-size: 40px;
   font-weight: bold;
