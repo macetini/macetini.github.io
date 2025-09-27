@@ -6,10 +6,21 @@
     <title>macetini</title>
 
     <link rel="stylesheet" href="style/style.css" />
+    <link rel="stylesheet" href="style/lightbox.css" />
+
+    <link
+      rel="preload"
+      href="sections/procedural-dungeon-summary.html"
+      as="fetch"
+      crossorigin="anonymous"
+    />
 
     <script type="text/javascript" src="libs/i18next.min.js" defer></script>
-    <script type="module" src="scripts/summaryLoader.js" defer></script>
-    <script type="module" src="scripts/detailsLoader.js" defer></script>
+
+    <script type="module" src="scripts/summary-loader.js" defer></script>
+    <script type="module" src="scripts/details-loader.js" defer></script>
+
+    <script type="module" src="scripts/lightbox.js" defer></script>
   </head>
   <body>
     <header>
@@ -29,8 +40,20 @@
           professional projects.
         </p>
 
-        <h2>Projects</h2>
-        <a href="#procedural-dungeon">View Projects</a>
+        <h2>Personal Projects</h2>
+        <ul>
+          <li>
+            <a href="#procedural-dungeon">Procedural Dungeon Generation</a>
+          </li>
+          <li><a href="#bender-shader">Bender Shader</a></li>
+        </ul>
+
+        <h2>Professional Projects</h2>
+        <ul>
+          <li>
+            <a href="#procedural-dungeon">TODO</a>
+          </li>
+        </ul>
       </section>
 
       <section id="procedural-dungeon" class="project-card">
@@ -45,6 +68,10 @@
           <summary>View Details and Technical Breakdown</summary>
           <div class="content-placeholder"></div>
         </details>
+      </section>
+
+      <section id="bender-shader" class="project-card">
+        TODO: Add Bender Shader project details here.
       </section>
 
       <section id="contact">
@@ -66,5 +93,10 @@
     <footer>
       <p>&copy; 2025 Marko Cetinic. All rights reserved.</p>
     </footer>
+
+    <div id="lightbox" class="lightbox">
+      <span class="lightbox-close">&times;</span>
+      <img class="lightbox-content" id="lightbox-img" alt="Enlarged" />
+    </div>
   </body>
 </html>

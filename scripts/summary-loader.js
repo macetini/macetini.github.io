@@ -1,6 +1,6 @@
 // Handles immediate, static content loading.
 
-import { loadContent } from "./loaderUtils.js";
+import { loadContent } from "./loader-utils.js";
 
 document.addEventListener("DOMContentLoaded", () => {
   const summaryPlaceholder = document.getElementById(
