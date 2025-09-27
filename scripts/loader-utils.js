@@ -2,6 +2,8 @@
  * Core function to fetch content from a URL specified in the 'data-content-url' attribute
  * and inserts it into the given element.
  */
+import { initializeLightboxTriggers } from './lightbox.js'; 
+
 export const loadContent = (element) => {
   // ... [The entire loadContent function logic remains here, unchanged] ...
 
@@ -24,6 +26,8 @@ export const loadContent = (element) => {
     .then((html) => {
       element.innerHTML = html;
       element.setAttribute("data-loaded", "true");
+
+      initializeLightboxTriggers(); 
     })
     .catch((error) => {
       console.error("Error loading content:", error);
