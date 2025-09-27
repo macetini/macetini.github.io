@@ -12,8 +12,7 @@ function initializeLightboxTriggers() {
       e.preventDefault();
       const fullImageUrl = trigger.getAttribute("href");
       lightboxImg.setAttribute("src", fullImageUrl);
-      lightbox.style.display = "block";
-      document.body.style.overflow = 'hidden'; 
+      lightbox.style.display = "block";      
     });
   });
 
@@ -21,15 +20,13 @@ function initializeLightboxTriggers() {
   if (closeBtn) {
     closeBtn.addEventListener("click", () => {
       lightbox.style.display = "none";
-      document.body.style.overflow = 'auto'; 
     });
   }
 
   // Function to close the lightbox when the user clicks anywhere outside the image
   lightbox.addEventListener("click", (e) => {
     if (e.target.classList.contains("lightbox")) {
-      lightbox.style.display = "none";
-      document.body.style.overflow = 'auto'; 
+      lightbox.style.display = "none";     
     }
   });
 }
