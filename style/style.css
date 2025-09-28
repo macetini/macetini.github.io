@@ -20,6 +20,10 @@ nav a {
   margin: 0 15px;
 }
 
+nav a:hover {
+  text-decoration: underline;
+}
+
 main {
   max-width: 1000px;
   margin: 20px auto;
@@ -32,16 +36,6 @@ section {
   margin-bottom: 20px;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-button {
-  display: inline-block;
-  background: #007bff;
-  color: #fff;
-  padding: 10px 20px;
-  text-decoration: none;
-  border-radius: 5px;
-  margin-right: 10px;
 }
 
 footer {
