@@ -33,6 +33,7 @@ export function loadContent(element) {
         initializeLightboxTriggers(lightboxTriggers);
       }
 
+      // Initialize detail triggers for any new content, skip if none found (for example, in summaries without banner)
       const detailTriggers = element.querySelectorAll(".project-banner");
       if (detailTriggers.length > 0) {
         initializeDetailTriggers(detailTriggers);
