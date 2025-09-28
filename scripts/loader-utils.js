@@ -4,13 +4,13 @@
  */
 import { initializeLightboxTriggers } from './lightbox.js'; 
 
-export const loadContent = (element) => {
-  // ... [The entire loadContent function logic remains here, unchanged] ...
-
+// Exported function to load content into a specified element
+export function loadContent(element) {
   const contentUrl = element.getAttribute("data-content-url");
 
   // Safety check: Don't load if no URL is present or already loaded
   if (!contentUrl || element.getAttribute("data-loaded") === "true") {
+    console.warn("No content URL found or already loaded");
     return;
   }
 
@@ -27,7 +27,11 @@ export const loadContent = (element) => {
       element.innerHTML = html;
       element.setAttribute("data-loaded", "true");
 
-      initializeLightboxTriggers(); 
+      // Initialize lightbox triggers for any new content, skip if none found (for example, in summaries without trigger images)
+      const triggers = element.querySelectorAll(".lightbox-trigger");
+      if(triggers.length > 0) {
+        initializeLightboxTriggers(triggers); 
+      }      
     })
     .catch((error) => {
       console.error("Error loading content:", error);

@@ -4,6 +4,11 @@ document.addEventListener("DOMContentLoaded", () => {
   // Select all <details> elements with a data-content-url attribute
   const lazyDetails = document.querySelectorAll("details[data-content-url]");
 
+  if(lazyDetails.length === 0) {
+    console.warn("No <details> elements found with a 'data-content-url' attribute");
+    return;
+  }
+
   lazyDetails.forEach((detailsElement) => {
     detailsElement.addEventListener("toggle", () => {
       if (detailsElement.open) {
@@ -13,7 +18,7 @@ document.addEventListener("DOMContentLoaded", () => {
         // The element that has the URL is the <details> element itself
         // Pass the detailsElement to loadContent so it can read the URL
         if (contentContainer) {
-          loadContent(detailsElement, contentContainer); 
+          loadContent(detailsElement); 
         }
       }
     });

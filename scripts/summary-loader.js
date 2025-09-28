@@ -1,14 +1,17 @@
 // Handles immediate, static content loading.
-
 import { loadContent } from "./loader-utils.js";
 
 document.addEventListener("DOMContentLoaded", () => {
-  const summaryPlaceholder = document.getElementById(
-    "procedural-dungeon-summary"
+  const summaryPlaceholders = document.getElementsByClassName(
+    "summary-placeholder"
   );
 
-  if (summaryPlaceholder) {
-    // Only one job: load the summary immediately on page load
-    loadContent(summaryPlaceholder);
+  if (summaryPlaceholders.length === 0) {
+    console.warn("No Elements found with a class 'summary-placeholder'");
+    return;
   }
+
+  [...summaryPlaceholders].forEach((summaryElement) => {
+    loadContent(summaryElement);
+  });
 });
