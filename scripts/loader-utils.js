@@ -2,7 +2,7 @@
  * Core function to fetch content from a URL specified in the 'data-content-url' attribute
  * and inserts it into the given element.
  */
-import { initializeLightboxTriggers } from './lightbox.js'; 
+import { initializeLightboxTriggers } from "./lightbox.js";
 
 // Exported function to load content into a specified element
 export function loadContent(element) {
@@ -28,10 +28,15 @@ export function loadContent(element) {
       element.setAttribute("data-loaded", "true");
 
       // Initialize lightbox triggers for any new content, skip if none found (for example, in summaries without trigger images)
-      const triggers = element.querySelectorAll(".lightbox-trigger");
-      if(triggers.length > 0) {
-        initializeLightboxTriggers(triggers); 
-      }      
+      const lightboxTriggers = element.querySelectorAll(".lightbox-trigger");
+      if (lightboxTriggers.length > 0) {
+        initializeLightboxTriggers(lightboxTriggers);
+      }
+
+      const detailTriggers = element.querySelectorAll(".project-banner");
+      if (detailTriggers.length > 0) {
+        initializeDetailTriggers(detailTriggers);
+      }
     })
     .catch((error) => {
       console.error("Error loading content:", error);
@@ -40,4 +45,19 @@ export function loadContent(element) {
     .finally(() => {
       element.classList.remove("loading");
     });
-};
+}
+
+function initializeDetailTriggers(triggers) {
+  triggers.forEach((trigger) => {
+    trigger.addEventListener("click", (e) => {
+      e.preventDefault();
+      const detailsId = trigger.id.replace("-banner", "-details");
+      const detailsElement = document.getElementById(detailsId);
+      if (!detailsElement) {
+        console.warn(`No details element found with ID: ${detailsId}`);
+        return;
+      }
+      detailsElement.open = !detailsElement.open;
+    });
+  });
+}
