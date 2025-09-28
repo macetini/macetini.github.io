@@ -1,3 +1,9 @@
+summary,
+.detail-trigger {
+  cursor: pointer;
+  font-weight: bold;
+}
+
 .project-card {
   border-left: 5px solid #282f36;
   padding-left: 15px;
@@ -10,7 +16,7 @@
 }
 
 .project-item-container-row {
-  text-align: center;  
+  text-align: center;
   display: flex;
   flex-direction: row;
   justify-content: space-around;

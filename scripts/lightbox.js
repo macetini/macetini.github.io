@@ -17,23 +17,3 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 });
-
-// Function to initialize the lightbox triggers
-// Export the function so other scripts (like 'loader-utils.js') can call it
-export function initializeLightboxTriggers(triggers) {
-  if (triggers.length === 0) {
-    console.warn("No lightbox triggers found, skipping initialization.");
-    return;
-  }
-
-  const lightboxImg = document.getElementById("lightbox-img");
-  // Function to open the lightbox
-  triggers.forEach((trigger) => {
-    trigger.addEventListener("click", (e) => {
-      e.preventDefault();
-      const fullImageUrl = trigger.getAttribute("href");
-      lightboxImg.setAttribute("src", fullImageUrl);
-      lightbox.style.display = "flex";
-    });
-  });
-}

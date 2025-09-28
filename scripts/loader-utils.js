@@ -1,9 +1,3 @@
-/**
- * Core function to fetch content from a URL specified in the 'data-content-url' attribute
- * and inserts it into the given element.
- */
-import { initializeLightboxTriggers } from "./lightbox.js";
-
 // Exported function to load content into a specified element
 export function loadContent(element) {
   const contentUrl = element.getAttribute("data-content-url");
@@ -24,20 +18,7 @@ export function loadContent(element) {
       return response.text();
     })
     .then((html) => {
-      element.innerHTML = html;
-      element.setAttribute("data-loaded", "true");
-
-      // Initialize lightbox triggers for any new content, skip if none found (for example, in summaries without trigger images)
-      const lightboxTriggers = element.querySelectorAll(".lightbox-trigger");
-      if (lightboxTriggers.length > 0) {
-        initializeLightboxTriggers(lightboxTriggers);
-      }
-
-      // Initialize detail triggers for any new content, skip if none found (for example, in summaries without banner)
-      const detailTriggers = element.querySelectorAll(".project-banner");
-      if (detailTriggers.length > 0) {
-        initializeDetailTriggers(detailTriggers);
-      }
+      onHtmlLoaded(html, element);
     })
     .catch((error) => {
       console.error("Error loading content:", error);
@@ -48,11 +29,49 @@ export function loadContent(element) {
     });
 }
 
-function initializeDetailTriggers(triggers) {
+// Function to handle the loaded HTML content
+function onHtmlLoaded(html, element) {
+  element.innerHTML = html;
+  element.setAttribute("data-loaded", "true");
+
+  // Initialize lightbox triggers for any new content, skip if none found (for example, in summaries without trigger images)
+  const lightboxTriggers = element.querySelectorAll(".lightbox-trigger");
+  if (lightboxTriggers.length > 0) {
+    initializeLightboxTriggers(lightboxTriggers);
+  }
+
+  // Initialize detail triggers for any new content, skip if none found (for example, in summaries without banner)
+  const detailTriggers = element.querySelectorAll(".detail-trigger");
+  if (detailTriggers.length > 0) {
+    initializeDetailTriggers(detailTriggers);
+  }
+}
+
+// Function to initialize the lightbox triggers
+function initializeLightboxTriggers(triggers) {
+  if (triggers.length === 0) {
+    console.warn("No lightbox triggers found, skipping initialization.");
+    return;
+  }
+
+  const lightboxImg = document.getElementById("lightbox-img");
+  // Function to open the lightbox
   triggers.forEach((trigger) => {
     trigger.addEventListener("click", (e) => {
       e.preventDefault();
-      const detailsId = trigger.id.replace("-banner", "-details");
+      const fullImageUrl = trigger.getAttribute("href");
+      lightboxImg.setAttribute("src", fullImageUrl);
+      lightbox.style.display = "flex";
+    });
+  });
+}
+
+// Function to initialize the detail triggers
+function initializeDetailTriggers(triggers) {
+  triggers.forEach((trigger) => {
+    trigger.addEventListener("click", (e) => {
+      e.stopPropagation();
+      const detailsId = trigger.getAttribute("data-target-id");
       const detailsElement = document.getElementById(detailsId);
       if (!detailsElement) {
         console.warn(`No details element found with ID: ${detailsId}`);
