@@ -45,15 +45,15 @@ footer {
   color: #fff;
 }
 
-.detail-link-minimal {  
+.detail-link-minimal {
   display: inline-block;
-  padding: 8px 16px;  
+  padding: 8px 16px;
   border: 1px solid #007bff; /* Blue border */
   color: #007bff; /* Blue text */
-  border-radius: 5px;  
+  border-radius: 5px;
   text-decoration: none;
-  font-weight: 500;  
-  margin: 20px 0;  
+  font-weight: 500;
+  margin: 20px 0;
   transition: all 0.2s ease-in-out;
 }
 
