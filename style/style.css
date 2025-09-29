@@ -14,6 +14,11 @@ header {
   text-align: center;
 }
 
+summary {
+  cursor: pointer;
+  font-weight: bold;
+}
+
 nav a {
   color: #fff;
   text-decoration: none;
@@ -38,26 +43,13 @@ section {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
+section p {
+  color: #333; /* Dark gray for main body text */
+}
+
 footer {
   text-align: center;
   padding: 20px 0;
   background: #333;
-  color: #fff;
-}
-
-.detail-link-minimal {
-  display: inline-block;
-  padding: 8px 16px;
-  border: 1px solid #007bff; /* Blue border */
-  color: #007bff; /* Blue text */
-  border-radius: 5px;
-  text-decoration: none;
-  font-weight: 500;
-  margin: 20px 0;
-  transition: all 0.2s ease-in-out;
-}
-
-.detail-link-minimal:hover {
-  background-color: #007bff;
   color: #fff;
 }
