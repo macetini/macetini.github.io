@@ -22,10 +22,10 @@
   color: #333333;
   background-color: #f0f0f0;
   border: 1px solid #333333;
-  border-radius: 5px; 
+  border-radius: 5px;
   text-decoration: none;
   font-weight: 500;
-  margin: 0; 
+  margin: 0;
   transition: all 0.2s ease-in-out;
 }
 
@@ -51,8 +51,8 @@
 .project-video {
   max-width: 100%;
   height: auto;
-  border-radius: 8px; 
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   cursor: pointer;
 }
 
@@ -69,7 +69,6 @@
 }
 
 @media (max-width: 800px) {
-  
   .project-item-container {
     margin: 15px 0;
   }
