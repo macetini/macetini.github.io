@@ -1,0 +1,19 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:01.000
+Start: Initializing the grid. The initial canvas is a flat white plane.
+
+00:00:01.000 --> 00:00:04.000
+Step 1: The system generates and places large, primary room blocks (in red, green, and blue) based on set spawn zones.
+
+00:00:04.000 --> 00:00:06.000
+Step 2: The system then generates additional minor rooms and structure blocks adjacent to the primary zones.
+
+00:00:06.000 --> 00:00:07.500
+Intermediate: Room colors and textures finalize the initial layout of the dungeon structure.
+
+00:00:07.500 --> 00:00:10.000
+Step 3: Fine-grained connections and corridors are algorithmically generated, linking the entire network of rooms.
+
+00:00:10.000 --> 00:00:12.000
+Final Stage: The full procedural dungeon map is generated, finalized, and ready for use.

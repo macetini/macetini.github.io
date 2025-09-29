@@ -28,3 +28,19 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 });
+
+// Function to initialize the detail triggers
+export function initializeDetailTriggers(triggers) {
+  triggers.forEach((trigger) => {
+    trigger.addEventListener("click", (e) => {
+      e.stopPropagation();
+      const detailsId = trigger.getAttribute("data-target-id");
+      const detailsElement = document.getElementById(detailsId);
+      if (!detailsElement) {
+        console.warn(`No details element found with ID: ${detailsId}`);
+        return;
+      }
+      detailsElement.open = !detailsElement.open;
+    });
+  });
+}

@@ -1,3 +1,6 @@
+import { initializeLightboxTriggers } from "./lightbox.js";
+import { initializeDetailTriggers } from "./details-loader.js";
+
 // Exported function to load content into a specified element
 export function loadContent(element) {
   const contentUrl = element.getAttribute("data-content-url");
@@ -45,39 +48,4 @@ function onHtmlLoaded(html, element) {
   if (detailTriggers.length > 0) {
     initializeDetailTriggers(detailTriggers);
   }
-}
-
-// Function to initialize the lightbox triggers
-function initializeLightboxTriggers(triggers) {
-  if (triggers.length === 0) {
-    console.warn("No lightbox triggers found, skipping initialization.");
-    return;
-  }
-
-  const lightboxImg = document.getElementById("lightbox-img");
-  // Function to open the lightbox
-  triggers.forEach((trigger) => {
-    trigger.addEventListener("click", (e) => {
-      e.preventDefault();
-      const fullImageUrl = trigger.getAttribute("href");
-      lightboxImg.setAttribute("src", fullImageUrl);
-      lightbox.style.display = "flex";
-    });
-  });
-}
-
-// Function to initialize the detail triggers
-function initializeDetailTriggers(triggers) {
-  triggers.forEach((trigger) => {
-    trigger.addEventListener("click", (e) => {
-      e.stopPropagation();
-      const detailsId = trigger.getAttribute("data-target-id");
-      const detailsElement = document.getElementById(detailsId);
-      if (!detailsElement) {
-        console.warn(`No details element found with ID: ${detailsId}`);
-        return;
-      }
-      detailsElement.open = !detailsElement.open;
-    });
-  });
 }

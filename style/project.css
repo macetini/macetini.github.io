@@ -15,6 +15,10 @@ summary,
   justify-content: center;
 }
 
+.project-item-container a:hover .project-video {
+  opacity: 0.9;
+}
+
 .project-item-container-row {
   text-align: center;
   display: flex;
@@ -25,7 +29,8 @@ summary,
 
 .project-banner,
 .project-image,
-.project-gif {
+.project-gif,
+.project-video {
   max-width: 100%;
   height: auto;
   border-radius: 8px;

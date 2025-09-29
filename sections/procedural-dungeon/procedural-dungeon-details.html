@@ -9,12 +9,37 @@
   </p>
 
   <figure class="project-item-container">
-    <a href="assets/procedural-dungeon/mov/dungeon_anim.gif" class="lightbox-trigger">
-      <img
-        class="project-gif"
-        src="assets/procedural-dungeon/mov/dungeon_anim.gif"
-        alt="Animated GIF showing a dungeon being generated."
-      />
+    <a
+      href="assets/procedural-dungeon/mov/dungeon_anim.webm"
+      class="lightbox-trigger"
+    >
+      <video
+        class="project-video"
+        alt="Animated video showing a dungeon being generated."
+        autoplay
+        loop
+        muted
+        playsinline
+      >
+        <source
+          src="assets/procedural-dungeon/mov/dungeon_anim.webm"
+          type="video/webm"
+        />
+        <source
+          src="assets/procedural-dungeon/mov/dungeon_anim.mp4"
+          type="video/mp4"
+        />
+
+        <track
+          kind="descriptions"
+          label="Visual Description"
+          srclang="en"
+          src="assets/procedural-dungeon/mov/dungeon_desc_en.vtt"
+          default
+        />
+
+        Your browser does not support the video tag.
+      </video>
     </a>
     <figcaption>Dungeon Generation Process</figcaption>
   </figure>
@@ -94,14 +119,37 @@
   <p>Room-specific generation logic:</p>
 
   <figure class="project-item-container">
-    <a href="assets/procedural-dungeon/mov/room_anim.gif" class="lightbox-trigger">
-      <img
-        class="project-gif"
-        src="assets/procedural-dungeon/mov/room_anim.gif"
-        alt="Animated GIF showing a single room's generation process."
-      />
+    <a
+      href="assets/procedural-dungeon/mov/node_anim.webm"
+      class="lightbox-trigger"
+    >
+      <video
+        class="project-video"
+        alt="Animated video showing a single room's generation process."
+        autoplay
+        loop
+        muted
+        playsinline
+      >
+        <source
+          src="assets/procedural-dungeon/mov/node_anim.webm"
+          type="video/webm"
+        />
+
+        <track
+          kind="descriptions"
+          label="Visual Description (Room Node)"
+          srclang="en"
+          src="assets/procedural-dungeon/mov/node_desc_en.vtt"
+          default
+        />
+
+        Your browser does not support the video tag.
+      </video>
     </a>
-    <figcaption>Room Generation Example</figcaption>
+    <figcaption>
+      Room Node Generation Example (Explaining item placement logic)
+    </figcaption>
   </figure>
 
   <figure class="project-item-container">
@@ -144,5 +192,4 @@
   <p class="detail-trigger" data-target-id="procedural-dungeon-details">
     Close Details
   </p>
-
 </div>

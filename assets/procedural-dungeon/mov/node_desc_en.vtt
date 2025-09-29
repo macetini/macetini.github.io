@@ -1,0 +1,16 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:01.000
+Start: The system initializes the blue room node. Wireframe boundaries for different item types are visible (yellow, red, purple).
+
+00:00:01.000 --> 00:00:02.000
+Step 1: The room's floor is rendered, setting the primary blue zone.
+
+00:00:02.000 --> 00:00:03.000
+Step 2: The first item spawn zone (yellow) is processed, and a horizontal floor item is placed at the top edge.
+
+00:00:03.000 --> 00:00:04.000
+Step 3: The second item spawn zone is processed, placing a vertical item on the right edge.
+
+00:00:04.000 --> 00:00:06.000
+Final Stage: All corner and edge spawn zones are processed, finalizing the placement of four unique floor items within the room node.
