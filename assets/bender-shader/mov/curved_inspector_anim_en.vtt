@@ -1,0 +1,13 @@
+WEBVTT
+
+00:00.000 --> 00:03.000
+The screen is split, showing a 3D scene of a curved green path with fences on top, and a lower view of a spline or curve editor. The camera in the 3D scene is positioned at the start of the path.
+
+00:03.000 --> 00:06.000
+In the lower editor, the user selects and drags a **tangent handle** (represented by a yellow line/arrow) extending from a control point at the beginning of the curve.
+
+00:06.000 --> 00:10.000
+As the tangent handle is moved, the initial curvature and direction of the path in the upper 3D scene dynamically changes, smoothly bending the start of the path up and to the left.
+
+00:10.000 --> 00:15.800
+The user adjusts the tangent's direction and length, causing the path's initial segment to curve back down and slightly to the right, demonstrating control over the path's smoothness and direction.
