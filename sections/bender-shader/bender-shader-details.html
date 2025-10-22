@@ -1,6 +1,6 @@
 <summary>View Technical Details and Breakdown</summary>
 <div>
-  <h2>Spline Bezier</h2>
+  <h2>Overview</h2>
 
   <p>
     In early 2010s I created a custom shader in Unity to simulate bending meshes
@@ -17,13 +17,30 @@
       <img
         class="project-image"
         src="assets/bender-shader/img/overview_inspector_and_game.webp"
-        alt="Inspector view of the Blue Dungeon Set assets."
+        alt="Curved Mesh Generation Overview."
       />
     </a>
     <figcaption>Curved Mesh Generation Overview</figcaption>
   </figure>
 
-  <p>TODO</p>
+  <p>
+    The spline curve is defined using a series of points and populated with a
+    prefab.
+  </p>
+
+  <figure class="project-item-container">
+    <a
+      href="assets/bender-shader/img/spline_example.webp"
+      class="lightbox-trigger"
+    >
+      <img
+        class="project-image"
+        src="assets/bender-shader/img/spline_example.webp"
+        alt="UV Spline example in Unity editor."
+      />
+    </a>
+    <figcaption>User Defined Spline.</figcaption>
+  </figure>
 
   <figure class="project-item-container">
     <a
@@ -36,10 +53,13 @@
         alt="UV Curve Item Prefab in the Unity Editor."
       />
     </a>
-    <figcaption>UV Curve Item Prefab in the Unity Editor.</figcaption>
+    <figcaption>UV Curve Item Prefab.</figcaption>
   </figure>
 
-  <p>TODO</p>
+  <p>
+    Both Spline and Prefab are defined in the Unity Inspector
+    <b>UVCurve.cs</b> component.
+  </p>
 
   <figure class="project-item-container">
     <a
@@ -55,7 +75,13 @@
     <figcaption>Unity Inspector showing UV Curve parameters.</figcaption>
   </figure>
 
-  <p>TODO</p>
+  <p>User can populate the spline with prefabs and configure them as needed.</p>
+
+  <h2>Static Curve</h2>
+
+  <p>
+    The result is a static model composed of a series of meshes along the curve.
+  </p>
 
   <figure class="project-item-container">
     <a
@@ -68,7 +94,7 @@
         alt="Populated UV Curve."
       />
     </a>
-    <figcaption>Populated UV Curve.</figcaption>
+    <figcaption>Static Curve Example.</figcaption>
   </figure>
 
   <p>TODO</p>
@@ -108,6 +134,8 @@
     </a>
     <figcaption>Curved Animation</figcaption>
   </figure>
+
+  <h2>Dynamic Curve</h2>
 
   <p>TODO</p>
 
