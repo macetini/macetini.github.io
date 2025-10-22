@@ -3,10 +3,8 @@
   <h2>Overview</h2>
 
   <p>
-    In early 2010s I created a custom shader in Unity to simulate bending meshes
-    along the spline. This shader deforms the vertices of 3D models based on
-    their position relative to a defined spline curve, allowing for dynamic and
-    interactive mesh deformations.
+    In the early 2010s, I created a custom Unity shader to deform 3D mesh
+    vertices along a defined spline, enabling dynamic, interactive bending.
   </p>
 
   <figure class="project-item-container">
@@ -24,8 +22,9 @@
   </figure>
 
   <p>
-    The spline curve is defined using a series of points and populated with a
-    prefab.
+    The spline curve is defined by a series of points and populated with a
+    specified prefab. The shader then deforms the mesh vertices to align along
+    the curve, allowing for real-time modifications and animations.
   </p>
 
   <figure class="project-item-container">
@@ -57,8 +56,8 @@
   </figure>
 
   <p>
-    Both Spline and Prefab are defined in the Unity Inspector
-    <b>UVCurve.cs</b> component.
+    Both the Spline and Prefab are configured in the Unity Inspector using the
+    UVCurve.cs component.
   </p>
 
   <figure class="project-item-container">
@@ -75,12 +74,12 @@
     <figcaption>Unity Inspector showing UV Curve parameters.</figcaption>
   </figure>
 
-  <p>User can populate the spline with prefabs and configure them as needed.</p>
+  <p>Users can populate and configure the spline with prefabs as needed.</p>
 
   <h2>Static Curve</h2>
 
   <p>
-    The result is a static model composed of a series of meshes along the curve.
+    The result is a model composed of meshes deformed to match the static curve.
   </p>
 
   <figure class="project-item-container">
@@ -97,7 +96,9 @@
     <figcaption>Static Curve Example.</figcaption>
   </figure>
 
-  <p>TODO</p>
+  <p>
+    The curve can be modified in real-time, with the model updating instantly.
+  </p>
 
   <figure class="project-item-container">
     <a
@@ -106,7 +107,7 @@
     >
       <video
         class="project-video"
-        alt="Animated video showing a dungeon being generated."
+        alt="Curve modification animation showing real-time updates."
         autoplay
         loop
         muted
@@ -132,12 +133,15 @@
         Your browser does not support the video tag.
       </video>
     </a>
-    <figcaption>Curved Animation</figcaption>
+    <figcaption>Curve Modification</figcaption>
   </figure>
 
   <h2>Dynamic Curve</h2>
 
-  <p>TODO</p>
+  <p>
+    Beyond a static curve, the shader can also create the illusion of movement
+    along the path.
+  </p>
 
   <figure class="project-item-container">
     <a
@@ -146,7 +150,7 @@
     >
       <video
         class="project-video"
-        alt="Animated video showing a dungeon being generated."
+        alt="Animated video simulating a movement along the curve."
         autoplay
         loop
         muted
@@ -172,10 +176,14 @@
         Your browser does not support the video tag.
       </video>
     </a>
-    <figcaption>Curved Animation Inspector</figcaption>
+    <figcaption>Movement along the curve.</figcaption>
   </figure>
 
-  <p>TODO</p>
+  <p>
+    Crucially, the camera is static. The illusion is created by the curve
+    deforming the model around the origin while simultaneously moving the meshes
+    toward the camera.
+  </p>
 
   <figure class="project-item-container">
     <a
@@ -184,7 +192,7 @@
     >
       <video
         class="project-video"
-        alt="Animated video showing a dungeon being generated."
+        alt="Animated video simulating a movement along the curve."
         autoplay
         loop
         muted
@@ -213,7 +221,9 @@
     <figcaption>Curved Animation</figcaption>
   </figure>
 
-  <p>TODO</p>
+  <h2>Curved Particles</h2>
+
+  <p>The shader can also be used to animate particles along the curve.</p>
 
   <figure class="project-item-container">
     <a
@@ -222,7 +232,7 @@
     >
       <video
         class="project-video"
-        alt="Animated video showing a dungeon being generated."
+        alt="Animated video showing particles moving along the curve."
         autoplay
         loop
         muted
@@ -248,10 +258,14 @@
         Your browser does not support the video tag.
       </video>
     </a>
-    <figcaption>Curved Animation</figcaption>
+    <figcaption>Curved Particle Animation</figcaption>
   </figure>
 
-  <p>TODO</p>
+  <p>
+    This shader was an unreleased experimental feature. Although the project was
+    modernized to Unity 2025, no further development is planned, as Unity now
+    offers a built-in Spline System.
+  </p>
 
   <ul>
     <li>
