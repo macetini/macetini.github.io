@@ -1,0 +1,10 @@
+WEBVTT
+
+00:00.000 --> 00:03.500
+The screen is split into two views: an upper 3D scene view and a lower curve editor or spline view. The 3D scene shows a green grass path with wooden fences on a curved path, and the camera is following the curve.
+
+00:03.500 --> 00:08.000
+In the lower view, a user interacts with a control point on the spline (indicated by a yellow circle/handle), adjusting its position and tangent, which represents the path's curve.
+
+00:08.000 --> 00:15.680
+As the control point's vertical position (Y-axis) is moved up and down in the lower view, the corresponding curve on the green path in the upper 3D scene dynamically changes its height and curvature, demonstrating real-time UV modification or spline deformation affecting the geometry.
