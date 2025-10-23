@@ -239,6 +239,58 @@
     distortion maps and their values is outside the scope of this article.
   </p>
 
+  <h3>Distortion, underwater and foam effects</h3>
+
+  <p>
+    The shader incorporates distortion effects to simulate the refraction of
+    light as it passes through the water surface. This effect is achieved by
+    using normal maps to perturb the UV coordinates of the underlying texture,
+    creating a wavy appearance.
+  </p>
+
+  <p>
+    Additionally, the shader includes underwater effects that simulate the
+    visual distortion experienced when viewing objects beneath the water
+    surface. Foam effects are also implemented to enhance the realism of wave
+    crests and shorelines.
+  </p>
+
+  <figure class="project-item-container">
+    <a
+      href="assets/water-shader/mov/distortion_anim.webm"
+      class="lightbox-trigger"
+    >
+      <video
+        class="project-video"
+        alt="Animated video showing distortion effect on URP water shader."
+        autoplay
+        loop
+        muted
+        playsinline
+      >
+        <source
+          src="assets/water-shader/mov/distortion_anim.webm"
+          type="video/webm"
+        />
+        <source
+          src="assets/water-shader/mov/distortion_anim.mp4"
+          type="video/mp4"
+        />
+
+        <track
+          kind="descriptions"
+          label="Visual Description"
+          srclang="en"
+          src="assets/water-shader/mov/distortion_anim_en.vtt"
+          default
+        />
+
+        Your browser does not support the video tag.
+      </video>
+    </a>
+    <figcaption>Distortion and underwater effect</figcaption>
+  </figure>
+
   <h3>Glitter Effect</h3>
 
   <p>
@@ -284,6 +336,52 @@
     </a>
     <figcaption>Glitter effect</figcaption>
   </figure>
+
+  <h3>Subsurface Scattering</h3>
+
+  <p>
+    The subsurface scattering effect enhances the realism of the water shader
+    by simulating the way light penetrates the water surface and scatters
+    beneath it. This effect is not particularly visible in this environment but
+    can be more pronounced in different conditions (e.g., shallow depth).
+  </p>
+
+  <figure class="project-item-container">
+    <a
+      href="assets/water-shader/mov/glitter_anim.webm"
+      class="lightbox-trigger"
+    >
+      <video
+        class="project-video"
+        alt="Animated video showing subsurface scattering effect on URP water shader."
+        autoplay
+        loop
+        muted
+        playsinline
+      >
+        <source
+          src="assets/water-shader/mov/sss_anim.webm"
+          type="video/webm"
+        />
+        <source
+          src="assets/water-shader/mov/sss_anim.mp4"
+          type="video/mp4"
+        />
+
+        <track
+          kind="descriptions"
+          label="Visual Description"
+          srclang="en"
+          src="assets/water-shader/mov/sss_anim_en.vtt"
+          default
+        />
+
+        Your browser does not support the video tag.
+      </video>
+    </a>
+    <figcaption>Subsurface Scattering Effect</figcaption>
+  </figure>
+
 
   <ul>
     <li>

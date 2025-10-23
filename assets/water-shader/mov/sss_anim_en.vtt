@@ -1,0 +1,25 @@
+WEBVTT
+
+00:00.000 --> 00:03.000
+The scene shows a 3D water surface being edited in a software interface, with a panel of shader parameters visible on the right.
+
+00:03.000 --> 00:04.000
+The user changes the **SSScale** parameter from 32 to 2.4.
+
+00:04.000 --> 00:07.000
+The user adjusts the **SSScale** parameter further, from 2.4 to 5, which subtly changes the water's appearance/subsurface scattering.
+
+00:07.000 --> 00:09.000
+The water remains a deep blue color, with parameters now stable.
+
+00:09.000 --> 00:10.500
+The user clicks the **SSColor** color picker and selects a **Magenta/Pink** color. The water instantly changes from blue to magenta/pink.
+
+00:10.500 --> 00:12.500
+The user clicks the **SSColor** color picker again and selects a **Cyan/Light Blue** color. The water instantly changes from magenta/pink to cyan.
+
+00:12.500 --> 00:14.500
+The user clicks the **SSColor** color picker again and selects a **Yellow/Gold** color. The water instantly changes from cyan to yellow/gold.
+
+00:14.500 --> 00:15.500
+The user clicks the **SSColor** color picker one last time and selects a **Purple** color, which is applied to the water as the clip ends.

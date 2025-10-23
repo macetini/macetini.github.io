@@ -1,0 +1,37 @@
+WEBVTT
+
+00:00.000 --> 00:03.000
+The scene shows a pier and pylons over water, with a shader parameter panel open. The water is currently a deep blue color.
+
+00:03.000 --> 00:05.500
+The user adjusts the **DistortionFactor** slider from 0.09 to 0.3. This changes the intensity of the water's surface distortion and ripple effect.
+
+00:05.500 --> 00:11.000
+The user navigates to and adjusts the **SSScale** parameter from 0.1 to 0.09. The water color remains deep blue.
+
+00:11.000 --> 00:13.500
+The user adjusts the **SSScale** parameter again, from 0.09 to 0.1.
+
+00:13.500 --> 00:16.000
+The user adjusts the **WaterAbsorptionRat** (Ratio) slider from 0.23 to 0.58. The water becomes visibly lighter and more transparent.
+
+00:16.000 --> 00:18.000
+The user continues to adjust **WaterAbsorptionRat**, changing it to 0.77. The water's transparency and color continue to lighten.
+
+00:18.000 --> 00:20.500
+The user resets **WaterAbsorptionRat** back to 0.0. The water instantly becomes very dark and opaque.
+
+00:20.500 --> 00:23.500
+The user sets **WaterAbsorptionRat** to a final value of 0.75. The water is now a semi-transparent, bright purplish-blue.
+
+00:23.500 --> 00:26.000
+The user adjusts the **FoamTilling** parameter from 1.4 to 11.6, significantly increasing the visual density of the white foam around the pylons.
+
+00:26.000 --> 00:28.000
+The user adjusts the **FoamMaxDistance** slider from 2.11 to 6.7. This extends the distance from the pylons where the foam is rendered.
+
+00:28.000 --> 00:31.000
+The user adjusts **FoamMaxDistance** again, from 6.7 to 1.9. This restricts the foam to a much smaller area directly touching the pylons.
+
+00:31.000 --> 00:35.500
+The user adjusts **FoamSharpness** from 2.28 to 1.94, softening the edges of the foam effect as the clip concludes.
