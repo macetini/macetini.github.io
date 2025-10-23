@@ -1,0 +1,25 @@
+WEBVTT
+
+00:00.000 --> 00:04.000
+The Unity editor is shown with a Game view and the Inspector. The water surface is dark blue with a floating boat and small object. The Inspector shows "Surface Inputs" for the custom water shader.
+
+00:04.000 --> 00:07.000
+The 'SurfaceColor' is quickly changed, cycling through yellow, red, and green. The water color updates instantly.
+
+00:07.000 --> 00:10.000
+The color is changed to pink, then back to a deep blue.
+
+00:10.000 --> 00:15.000
+The 'Wave1Amplitude' value is changed from 1.2 to 3. The waves in the scene immediately become much larger.
+
+00:15.000 --> 00:22.000
+The 'Wave1Steepness' is changed from 1 to 2. The waves become sharper and more defined, creating rougher water.
+
+00:22.000 --> 00:28.000
+The 'Wave2Wavelength' is changed from 90 to 140, increasing the distance between the secondary set of waves.
+
+00:28.000 --> 00:32.000
+The 'Wave2Amplitude' is changed from 1 to 4, making the secondary wave influence much higher.
+
+00:32.000 --> 00:39.999
+The 'Wave2Speed' is changed from 0.3 to 5, drastically increasing the speed of the secondary wave pattern, creating turbulent water movement. The small boat is violently tossed by the large, fast waves.
