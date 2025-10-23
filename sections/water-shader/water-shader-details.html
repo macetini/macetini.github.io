@@ -382,6 +382,71 @@
     <figcaption>Subsurface Scattering Effect</figcaption>
   </figure>
 
+  <h3>Unlit Shader</h3>
+
+  <p>
+    In addition to the lit shader, an unlit version of the water shader is also available. 
+    The unlit shader focuses on the visual aspects of the water surface without incorporating lighting calculations,
+    making it suitable for specific artistic styles or performance considerations. 
+    It was created as a draft of the lit version and it does not have all the features of the lit shader. 
+    It mainly focuses on the wave displacement and basic color effects and it lacks features like reflections or subsurface scattering.
+    It can be used in scenarios where lighting effects are not required or desired.
+  </p>
+
+  <figure class="project-item-container">
+    <a
+      href="assets/water-shader/mov/unlit_anim.webm"
+      class="lightbox-trigger"
+    >
+      <video
+        class="project-video"
+        alt="Animated video showing unlit water shader."
+        autoplay
+        loop
+        muted
+        playsinline
+      >
+        <source
+          src="assets/water-shader/mov/unlit_anim.webm"
+          type="video/webm"
+        />
+        <source
+          src="assets/water-shader/mov/unlit_anim.mp4"
+          type="video/mp4"
+        />
+
+        <track
+          kind="descriptions"
+          label="Visual Description"
+          srclang="en"
+          src="assets/water-shader/mov/unlit_anim_en.vtt"
+          default
+        />
+
+        Your browser does not support the video tag.
+      </video>
+    </a>
+    <figcaption>Unlit Shader</figcaption>
+  </figure>
+
+  <details class="collapsible-code-block" id="code-details-water-unlit-shader-urp">
+    <summary>
+      <div class="summary-content">
+        <span>View Full Shader Code (Click to Toggle)</span>
+        <button class="copy-button" data-code-id="water-unlit-shader-urp">
+          Copy Code
+        </button>
+      </div>
+    </summary>
+    <pre>
+    <code id="shaderCodeContent-gerstnerUnlitShader" 
+      data-src="assets/water-shader/data/UnlitGesternWave.shader">
+      Loading Code ... 
+    </code>
+    </pre>
+  </details>
+
+
 
   <ul>
     <li>
