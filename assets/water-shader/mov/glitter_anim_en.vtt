@@ -1,0 +1,16 @@
+WEBVTT
+
+00:00.000 --> 00:02.500
+The screen shows a split view within the Unity editor, with a game view of a blue water surface on the left and a shader **Inspector panel** on the right.
+
+00:02.500 --> 00:04.000
+The user locates and adjusts the **GlitterSharpness** and **GlitterIntensity** parameters in the Inspector panel.
+
+00:04.000 --> 00:09.500
+As **GlitterIntensity** is increased, a bright, reflective **highlight or 'glitter' effect** appears on the crests of the water waves, following the dynamic movement of the surface.
+
+00:09.500 --> 00:15.500
+The user continues to adjust the intensity, dramatically increasing and then decreasing the visibility of the bright, specular reflections on the water.
+
+00:15.500 --> 00:17.300
+The camera moves, and a simple model of a **ship** is briefly seen floating on the dynamically waved water.

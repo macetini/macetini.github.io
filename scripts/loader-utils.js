@@ -55,6 +55,28 @@ function onHtmlLoaded(html, element) {
       copyShaderCode(event, "code-details-" + button.dataset.codeId);
     });
   });
+
+  const codeBlocks = document.querySelectorAll("code[data-src]");
+
+  codeBlocks.forEach((codeElement) => {
+    const filePath = codeElement.getAttribute("data-src");
+
+    fetch(filePath)
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        return response.text();
+      })
+      .then((fileContent) => {
+        // Ensure the content is HTML-escaped before injection
+        codeElement.textContent = fileContent;
+      })
+      .catch((error) => {
+        codeElement.textContent = `Error loading file: ${filePath}`;
+        console.error("Fetch error:", error);
+      });
+  });
 }
 
 function copyShaderCode(event, detailsId) {
