@@ -44,7 +44,7 @@
         alt="UV Spline example in Unity editor."
       />
     </a>
-    <figcaption>URP Shader Material Options</figcaption>
+    <figcaption>URP Shader Material Customization Options</figcaption>
   </figure>
 
   <p>
@@ -99,6 +99,68 @@
       </video>
     </a>
     <figcaption>BiRP Water Shader</figcaption>
+  </figure>
+
+  <details class="collapsible-code-block">
+  <summary>View Large Shader Code (Click to Toggle)</summary>
+  <pre>
+    <code>
+      // Your large shader code starts here...
+      Shader "Custom/GerstnerWater" {
+        Properties {
+          _Depth ("Wave Depth", Range(0, 10)) = 5.0
+          _Speed ("Wave Speed", Range(0.1, 5)) = 1.0
+          // ... thousands of lines of code
+        }
+      }
+    </code>
+  </pre>
+</details>
+
+
+  <h2>URP</h2>
+
+  <p>
+    The URP version of the shader is built using Unity's Shader Graph, which
+    allows for a more visual approach to shader development. Shader Graph
+    provides a node-based interface for creating shaders, making it easier to
+    understand and modify the shader's behavior.
+  </p>
+
+  <figure class="project-item-container">
+    <a
+      href="assets/water-shader/mov/urp_anim.webm"
+      class="lightbox-trigger"
+    >
+      <video
+        class="project-video"
+        alt="Animated video showing BiRP water shader."
+        autoplay
+        loop
+        muted
+        playsinline
+      >
+        <source
+          src="assets/water-shader/mov/urp_anim.webm"
+          type="video/webm"
+        />
+        <source
+          src="assets/water-shader/mov/urp_anim.mp4"
+          type="video/mp4"
+        />
+
+        <track
+          kind="descriptions"
+          label="Visual Description"
+          srclang="en"
+          src="assets/water-shader/mov/urp_anim_en.vtt"
+          default
+        />
+
+        Your browser does not support the video tag.
+      </video>
+    </a>
+    <figcaption>URP Water Shader</figcaption>
   </figure>
 
 
