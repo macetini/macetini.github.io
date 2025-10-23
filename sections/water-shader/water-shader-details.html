@@ -1,10 +1,107 @@
 <summary>View Technical Details and Breakdown</summary>
 <div>
-  <h2>TODO</h2>
+  <h2>Overview</h2>
 
   <p>
-    TODO
+    After following the Flow tutorial series by Jasper Flick of Catlike Coding,
+    I decided to create my own water shader based on the techniques taught in
+    the series. The goal was to create a shader that mimics the behavior of
+    water surface like waves.
   </p>
+
+  <h2>Technical Details</h2>
+
+  <p>
+    The shader uses Gerstner (Trochoidal) Waves to simulate realistic wave
+    behavior. Gerstner waves are a mathematical model that describes the motion
+    of water waves, allowing for the creation of complex wave patterns by
+    combining multiple wave functions.
+  </p>
+
+  <p>
+    Key features of the Water Shader include:
+
+    <ul>
+      <li>Gerstner Wave Vertex Displacement</li>
+      <li>Adjustable wave parameters: amplitude,</li>
+      <li>Adjustable wave parameters: amplitude, wavelength ,frequency, and direction</li>
+      <li>Planar and SkyBox reflection</li>
+      <li>Subsurface scattering and glitter effects</li>
+      <li>Normal maps displacement and distortion</li>
+      <li>Foam and underwater distortion effects</li>
+      <li>Customizable wave colors</li>
+    </ul>    
+  </p>
+
+  <figure class="project-item-container">
+    <a
+      href="assets/water-shader/img/shader_options.webp"
+      class="lightbox-trigger"
+    >
+      <img
+        class="project-image"
+        src="assets/water-shader/img/shader_options.webp"
+        alt="UV Spline example in Unity editor."
+      />
+    </a>
+    <figcaption>URP Shader Material Options</figcaption>
+  </figure>
+
+  <p>
+    The shader is implemented in Unity3D and supports both the Universal Render
+    Pipeline (URP) and the Built-in Render Pipeline (BiRP). This ensures
+    compatibility with a wide range of Unity projects.
+  </p>
+
+  <h2>BiRP</h2>
+
+  <p>
+    The original shader was created using Unity's Built-in Render Pipeline (BiRP). 
+    It utilizes Unity3d built in Surface Shader to handle lighting and shading calculations.  
+  </p>
+
+   <p>
+    As the BiRP is an older rendering pipeline, it is not actively developed any more. 
+    Therefore, the rest of the details will focus on the URP version.
+  </p>
+
+  <figure class="project-item-container">
+    <a
+      href="assets/water-shader/mov/birp_anim.webm"
+      class="lightbox-trigger"
+    >
+      <video
+        class="project-video"
+        alt="Animated video showing BiRP water shader."
+        autoplay
+        loop
+        muted
+        playsinline
+      >
+        <source
+          src="assets/water-shader/mov/birp_anim.webm"
+          type="video/webm"
+        />
+        <source
+          src="assets/water-shader/mov/birp_anim.mp4"
+          type="video/mp4"
+        />
+
+        <track
+          kind="descriptions"
+          label="Visual Description"
+          srclang="en"
+          src="assets/water-shader/mov/birp_anim_en.vtt"
+          default
+        />
+
+        Your browser does not support the video tag.
+      </video>
+    </a>
+    <figcaption>BiRP Water Shader</figcaption>
+  </figure>
+
+
 
   <ul>
     <li>
