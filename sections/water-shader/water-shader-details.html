@@ -101,9 +101,18 @@
     <figcaption>BiRP Water Shader</figcaption>
   </figure>
 
-  <details class="collapsible-code-block">
-  <summary>View Large Shader Code (Click to Toggle)</summary>
-  <pre>
+  <p>Full shader code available below:</p>
+
+  <details class="collapsible-code-block" id="code-details-water-shader-urp">
+    <summary>
+      <div class="summary-content">
+        <span>View Full Shader Code (Click to Toggle)</span>
+        <button class="copy-button" data-code-id="water-shader-urp">
+          Copy Code
+        </button>
+      </div>
+    </summary>
+    <pre>
     <code>
       // Your large shader code starts here...
       Shader "Custom/GerstnerWater" {
@@ -125,6 +134,12 @@
     allows for a more visual approach to shader development. Shader Graph
     provides a node-based interface for creating shaders, making it easier to
     understand and modify the shader's behavior.
+  </p>
+
+  <p>
+    The URP shader maintains the same features as the BiRP version but takes
+    advantage of the performance optimizations and modern rendering techniques
+    available in URP.
   </p>
 
   <figure class="project-item-container">
@@ -163,6 +178,24 @@
     <figcaption>URP Water Shader</figcaption>
   </figure>
 
+  <p>
+    URP shader is written using wih a mixture of built-in nodes and custom HLSL nodes. 
+    Unfortunately, because of it's size the full graph is not easily presented.
+  </p>
+
+  <figure class="project-item-container">
+    <a
+      href="assets/water-shader/img/sg_urp_water.webp"
+      class="lightbox-trigger"
+    >
+      <img
+        class="project-image"
+        src="assets/water-shader/img/sg_urp_water.webp"
+        alt="URP Shader Graph Nodes."
+      />
+    </a>
+    <figcaption>URP Shader Graph Nodes</figcaption>
+  </figure>
 
 
   <ul>
