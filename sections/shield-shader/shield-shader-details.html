@@ -2,6 +2,149 @@
 <div>
   <h2>Overview</h2>
 
+  <p>
+    The Shield Shader project focuses on creating a realistic shield effect
+    using advanced shader techniques. This shader simulates the appearance of a
+    protective energy shield, complete with dynamic lighting, transparency, and
+    distortion effects.
+  </p>
+
+  <p>Key features of the Shield Shader include:</p>
+
+  <ul>
+    <li>Fresnel / rim lighting control for edge glow</li>
+    <li>Base color / tint + emissive color support</li>
+    <li>Distortion / refraction-like view-dependent offset</li>
+    <li>Procedural noise / animated scroll for energy movement</li>
+    <li>Impact ripple / shockwave parameters for hit feedback</li>
+    <li>Normal map support for surface detail</li>
+    <li>HDR emission friendly (works with URP post-processing)</li>
+    <li>Low-cost variant options for mobile/low-end targets</li>
+  </ul>
+
+  <p>
+    The shield is interactive, responding to player actions (mouse clicks) by
+    generating impact ripples and shockwave. The shader is designed to be
+    flexible and adaptable, allowing for customization of various parameters,
+    such as color, transparency, and distortion.
+  </p>
+
+  <h3>Customization</h3>
+
+  <p>
+    Users can customize the shield's appearance by adjusting parameters like
+    base color, emissive intensity, distortion strength, and ripple speed. This
+    allows for a wide range of visual styles, from subtle energy fields to
+    vibrant, glowing shields.
+  </p>
+
+  <figure class="project-item-container">
+    <a
+      href="assets/shield-shader/mov/shield_shader_anim.webm"
+      class="lightbox-trigger"
+    >
+      <video
+        class="project-video"
+        alt="Animation showcasing the Shield Shader effect with dynamic lighting and distortion."
+        autoplay
+        loop
+        muted
+        playsinline
+      >
+        <source
+          src="assets/shield-shader/mov/shield_shader_anim.webm"
+          type="video/webm"
+        />
+        <source
+          src="assets/shield-shader/mov/shield_shader_anim.mp4"
+          type="video/mp4"
+        />
+
+        <track
+          kind="descriptions"
+          label="Visual Description"
+          srclang="en"
+          src="assets/shield-shader/mov/shield_shader_anim_en.vtt"
+          default
+        />
+
+        Your browser does not support the video tag.
+      </video>
+    </a>
+    <figcaption>Shield shader interaction and customization</figcaption>
+  </figure>
+
+  <h3>Implementation Details</h3>
+
+  <p>
+    The shield is actually two meshes: an outer shield mesh with the shield
+    shader applied, and an inner mesh with a simple emissive material to give
+    the appearance of a glow. This way the shield looks good from all angles and
+    eliminates the artifacts that can occur with rendering inside of a
+    transparent materials.
+  </p>
+
+  <figure class="project-item-container-row">
+    <a
+      href="assets/shield-shader/img/shield_shader_back.webp"
+      class="lightbox-trigger"
+    >
+      <img
+        class="project-image"
+        src="assets/shield-shader/img/shield_shader_back.webp"
+        alt="Shield Shader back side."
+      />
+    </a>
+
+    <a
+      href="assets/shield-shader/img/shield_shader_front.webp"
+      class="lightbox-trigger"
+    >
+      <img
+        class="project-image"
+        src="assets/shield-shader/img/shield_shader_front.webp"
+        alt="Shield Shader front side."
+      />
+    </a>
+  </figure>
+
+  <p>
+    The URP Shader Graph and a possible Lit version are planed but not fully
+    implemented yet. Some issues still persist, but will be resolved.
+  </p>
+
+  <figure class="project-item-container">
+    <a
+      href="assets/shield-shader/img/shield_shader_sg.webp"
+      class="lightbox-trigger"
+    >
+      <img
+        class="project-image"
+        src="assets/shield-shader/img/shield_shader_sg.webp"
+        alt="Shield Shader Graph."
+      />
+    </a>
+    <figcaption>Shield Shader Graph Implementation</figcaption>
+  </figure>
+
+  <p>For now Unlit Custom shader is used.</p>
+
+  <details class="collapsible-code-block" id="code-details-shield-shader">
+    <summary>
+      <div class="summary-content">
+        <span>View Full Shader Code (Click to Toggle)</span>
+        <button class="copy-button" data-code-id="shield-shader">
+          Copy Code
+        </button>
+      </div>
+    </summary>
+    <pre>
+    <code code id="shaderCodeContent-shieldShader" 
+      data-src="assets/shield-shader/data/ClassicShield.shader">
+      Loading Code ...
+    </code>
+  </pre>
+  </details>
 
   <ul>
     <li>

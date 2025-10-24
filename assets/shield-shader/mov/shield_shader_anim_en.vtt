@@ -1,0 +1,49 @@
+WEBVTT
+
+00:00.000 --> 00:10.000
+The video starts by showing a translucent dome/shield effect with a green-blue tint and a red/pink Fresnel effect on the edges. The **"Shield Main Colors"** are set: **Hue** is green, **Luminosity** at 5, and **Segue** at 1.
+
+00:10.000 --> 00:20.000
+The user changes the **Hue** of the **"Shield Main Colors"** from **green (1)** to **red (0)** and then back to **green (1)**, demonstrating the base tint control.
+
+00:20.000 --> 00:30.000
+The **Luminosity** is adjusted from **5** down to **0.5**, making the shield much darker and less vibrant, and then back up to **5**.
+
+00:30.000 --> 00:40.000
+The **Luminosity** is dramatically increased from **5** up to **10.7** and then back down to **5**, showing the effect of HDR/emission control. The **Segue** is briefly adjusted, which controls the transition of the primary color.
+
+00:40.000 --> 00:49.000
+The user navigates to the **"Hit Settings"** and changes the **Magnitude** from **0.1** up to **0.3** and then briefly to **0.66** to demonstrate a simulated **impact ripple/shockwave** on the shield.
+
+00:49.000 --> 00:54.000
+The user increases the **Magnitude** to **0.66**, showing a strong, large impact ripple, and then sets it back to **0.1**.
+
+00:54.000 --> 01:03.000
+The **Tint** color for the hit effect is changed from **red** to a **pink/orange**, and then the **Opacity** is adjusted from **2** to **5**, making the impact effect more solid.
+
+01:03.000 --> 01:07.000
+The **Outline** color for the hit effect is changed from **cyan** to **yellow/orange**, then back to **cyan**.
+
+01:07.000 --> 01:14.000
+The **Outline** setting is briefly reduced to **0.01** (making the outline barely visible) and then set back to **0.5**, showing the outline's thickness control.
+
+01:14.000 --> 01:29.000
+Under **"Fresnel Settings,"** the user changes the **Tiling** for the **Rim Mask** texture from **(1, 1)** to **(2, 2)** and then greatly increases the **Falloff** from **5** to **15.1** and then back to **5**, controlling the thickness and smoothness of the rim glow.
+
+01:29.000 --> 01:34.000
+The **Offset** for the Fresnel effect is adjusted from **0.25** to **0.25**, demonstrating the center/edge bias of the Fresnel glow.
+
+01:34.000 --> 01:40.000
+Under **"Distortion Settings,"** the **Blend Distortion** value is adjusted from **0.25** up to **10**, introducing a **strong refraction-like distortion** on the shield.
+
+01:40.000 --> 01:54.000
+The user enables the **Superseded Distortion** checkbox, showing a different (simpler, more performant) type of distortion, and then unchecks it.
+
+01:54.000 --> 01:58.000
+The user enables and disables the **Distortion Mask** checkbox. When enabled, a fine hexagonal pattern is revealed, applying the distortion effect only to the pattern's mask.
+
+01:58.000 --> 02:05.000
+With the distortion mask active, the **Scroll Rate** is adjusted from **0.5** up to **3.48**, creating an **animated scroll/movement** of the hexagonal noise pattern across the shield.
+
+02:05.000 --> 02:09.000
+The video ends with the shield showing the animated hexagonal distortion pattern, demonstrating the **procedural noise** effect.
