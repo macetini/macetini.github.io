@@ -34,6 +34,12 @@
   color: #fff;
 }
 
+.project-link-button-note {
+  font-size: 14px;
+  color: #666666;
+  margin-top: 5px;
+}
+
 .project-item-container {
   text-align: center;
   justify-content: center;
