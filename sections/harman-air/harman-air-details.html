@@ -3,9 +3,100 @@
   <h2>Overview</h2>
 
   <p>
-    TODO
+    Back in the day (2014), I created a few games using Adobe AIR. I wanted to
+    aquatinted myself with a new stage 3d platform. Today Adobe AIR has been
+    taken over by Harman, and I decided to revisit one of my old projects and
+    bring it back to life using the new Harman AIR SDK.
   </p>
 
+  <h2>PONG</h2>
+
+  <p>This is a small PongActionScript 3 MVCS game (Pong) using:</p>
+  <ul>
+    <li>Starling</li>
+    <li>Feathers for rendering/UI</li>
+    <li>Robotlegs</li>
+    <li>Signals</li>
+    <li>Swiftsuspenders for DI and app structure</li>
+  </ul>
+
+  <p>
+    Originally created as an experiment in 2014. The project demonstrates the
+    use of the Robotlegs MVC pattern alongside Stage3D and Signals for a clean,
+    modular architecture. The project dependency code had to be modified to work, so
+    '.swc' files were not used. They are still included in the repo for reference.
+  </p>
+
+  <figure class="project-item-container">
+    <a
+      href="assets/harman-air/img/harman_air_pong.webp"
+      class="lightbox-trigger"
+    >
+      <img
+        class="project-image"
+        src="assets/harman-air/img/harman_air_pong.webp"
+        alt="As3 Pong Game Gameplay Screenshot"
+      />
+    </a>
+    <figcaption>As3 Pong Game Gameplay Screenshot.</figcaption>
+  </figure>
+
+  <p>While visually not that impressive, there is a lot under the hood.</p>
+
+  <h3>Features & Tech Stack</h3>
+
+  <ul>
+    <li>Harman Adobe AIR (v51.2.1.0)</li>
+    <li>Starling Framework</li>
+    <li>Feathers UI</li>
+    <li>Robotlegs (MVCS)</li>
+    <li>SwiftSuspenders (Dependency Injection)</li>
+  </ul>
+
+  <figure class="project-item-container">
+    <a
+      href="assets/harman-air/svg/harman_air_pong_graph.svg"
+      class="lightbox-trigger"
+    >
+      <img
+        class="project-image"
+        width="100%"
+        height="100%"
+        src="assets/harman-air/svg/harman_air_pong_graph.svg"
+        alt="As3 Pong Game Architecture Diagram"
+      />
+    </a>
+    <figcaption>As3 Pong Game Architecture Diagram (created with Graphviz)</figcaption>
+  </figure>
+
+  <p>Entry / boot sequence:</p>
+  <ul>
+    <li>
+      Main creates Starling and Robotlegs context and runs configuration in
+      org.pong.mvcs.AppConfig.
+    </li>
+    <li>
+      App config fragments DI/bootstrapping into small bootstrap classes under
+      bootstraps:
+    </li>
+    <li>Models: org.pong.mvcs.controller.bootstraps.BootstrapModels</li>
+    <li>Signals: org.pong.mvcs.controller.bootstraps.BootstrapSignals</li>
+    <li>
+      Signal→Command bindings:
+      org.pong.mvcs.controller.bootstraps.BootstrapSignalCommandMap
+    </li>
+    <li>
+      Mediator mappings:
+      org.pong.mvcs.controller.bootstraps.BootstrapMediatorMap
+    </li>
+    <li>Services: org.pong.mvcs.controller.bootstraps.BootstrapServices</li>
+    <li>Utils: org.pong.mvcs.controller.bootstraps.BootstrapUtils</li>
+  </ul>
+
+  <p>
+    The system can be adapted for any kind of project. It was created with
+    modularity in mind, allowing for easy extension and customization.
+  </p>
 
   <p class="detail-trigger" data-target-id="harman-air-details">
     Close Details
