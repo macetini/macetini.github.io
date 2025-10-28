@@ -76,24 +76,24 @@
   <ul>
     <li>
       Main creates Starling and Robotlegs context and runs configuration in
-      org.pong.mvcs.AppConfig.
+      mvcs.AppConfig.
     </li>
     <li>
       App config fragments DI/bootstrapping into small bootstrap classes under
       bootstraps:
     </li>
-    <li>Models: org.pong.mvcs.controller.bootstraps.BootstrapModels</li>
-    <li>Signals: org.pong.mvcs.controller.bootstraps.BootstrapSignals</li>
+    <li>Models: BootstrapModels</li>
+    <li>Signals: controller.bootstraps.BootstrapSignals</li>
     <li>
-      Signal→Command bindings:
-      org.pong.mvcs.controller.bootstraps.BootstrapSignalCommandMap
+      Signal → Command bindings:
+      controller.bootstraps.BootstrapSignalCommandMap
     </li>
     <li>
       Mediator mappings:
-      org.pong.mvcs.controller.bootstraps.BootstrapMediatorMap
+      controller.bootstraps.BootstrapMediatorMap
     </li>
-    <li>Services: org.pong.mvcs.controller.bootstraps.BootstrapServices</li>
-    <li>Utils: org.pong.mvcs.controller.bootstraps.BootstrapUtils</li>
+    <li>Services: controller.bootstraps.BootstrapServices</li>
+    <li>Utils: controller.bootstraps.BootstrapUtils</li>
   </ul>
 
   <p>
