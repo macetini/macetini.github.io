@@ -3,8 +3,8 @@
   <h2>Overview</h2>
 
   <p>
-    Back in the day (2013/2014), I created a few games using Adobe AIR. I wanted to
-    aquatinted myself with a new Stage3D platform. Today Adobe AIR has been
+    Back in the day (2013/2014), I created a few games using Adobe AIR. I wanted
+    to aquatinted myself with a new Stage3D platform. Today Adobe AIR has been
     taken over by Harman, and I decided to revisit one of my old projects and
     bring it back to life using the new Harman AIR SDK.
   </p>
@@ -22,10 +22,10 @@
 
   <p>
     Originally created as an experiment in 2014. The project demonstrates the
-    use of the Robotlegs MVC pattern alongside Stage3D, Signals and Feathers for a clean,
-    modular architecture. The project dependency code had to be modified to
-    work, so '.swc' files were not used. They are still included in the repo for
-    reference.
+    use of the Robotlegs MVC pattern alongside Stage3D, Signals and Feathers for
+    a clean, modular architecture. The project dependency code had to be
+    modified to work, so '.swc' files were not used. They are still included in
+    the repo for reference.
   </p>
 
   <figure class="project-item-container">
@@ -75,25 +75,18 @@
   <p>Entry / boot sequence:</p>
   <ul>
     <li>
-      Main creates Starling and Robotlegs context and runs configuration in
-      mvcs.AppConfig.
+      Main creates Starling and Robotlegs context and runs configuration in AppConfig.
     </li>
     <li>
       App config fragments DI/bootstrapping into small bootstrap classes under
       bootstraps:
     </li>
     <li>Models: BootstrapModels</li>
-    <li>Signals: controller.bootstraps.BootstrapSignals</li>
-    <li>
-      Signal → Command bindings:
-      controller.bootstraps.BootstrapSignalCommandMap
-    </li>
-    <li>
-      Mediator mappings:
-      controller.bootstraps.BootstrapMediatorMap
-    </li>
-    <li>Services: controller.bootstraps.BootstrapServices</li>
-    <li>Utils: controller.bootstraps.BootstrapUtils</li>
+    <li>Signals: BootstrapSignals</li>
+    <li>Signal → Command bindings: BootstrapSignalCommandMap</li>
+    <li>Mediator mappings: BootstrapMediatorMap</li>
+    <li>Services: BootstrapServices</li>
+    <li>Utils: BootstrapUtils</li>
   </ul>
 
   <p>
@@ -104,9 +97,9 @@
   <h2>Midas Miner</h2>
 
   <p>
-    I also created a small Midas Miner clone to showcase the
-    framework capabilities. The game was one of my first gaming projects back in
-    2013 when I was learning game development.
+    I also created a small Midas Miner clone to showcase the framework
+    capabilities. The game was one of my first gaming projects back in 2013 when
+    I was learning game development.
   </p>
 
   <figure class="project-item-container">
