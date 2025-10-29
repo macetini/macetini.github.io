@@ -84,3 +84,10 @@
     justify-content: flex-start;
   }
 }
+
+.hidden-iframe {
+  /* 1. Remove Border */
+  border: none;
+  /* 2. Hide Overflow */
+  overflow: hidden;
+}

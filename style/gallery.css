@@ -30,7 +30,6 @@ div.gallery-item img {
 }
 
 /* 5. Styling for the caption/description */
-div.desc {
-  padding: 10px;
+div.desc {  
   text-align: center;
 }
