@@ -99,6 +99,13 @@
       crossorigin="anonymous"
     />
 
+    <link
+      rel="prefetch"
+      href="sections/zoomomba/zoomomba-summary.html"
+      as="fetch"
+      crossorigin="anonymous"
+    />
+
     <script type="module" src="scripts/summary-loader.js" defer></script>
     <script type="module" src="scripts/details-loader.js" defer></script>
 
@@ -140,6 +147,7 @@
         <h2>Professional Projects</h2>
         <ul>
           <li><a href="#skyrama">Skyrama</a></li>
+          <li><a href="#zoomomba">Zoomomba</a></li>
         </ul>
       </section>
 
@@ -353,6 +361,24 @@
         <details
           id="skyrama-details"
           data-content-url="sections/skyrama/skyrama-details.html"
+        >
+          <summary>View Technical Details and Breakdown</summary>
+          <div class="content-placeholder"></div>
+        </details>
+      </section>
+
+      <section id="zoomomba" class="project-section">
+        <div
+          id="zoomomba-summary"
+          class="summary-placeholder"
+          data-content-url="sections/zoomomba/zoomomba-summary.html"
+        >
+          <p>Loading project summary...</p>
+        </div>
+
+        <details
+          id="zoomomba-details"
+          data-content-url="sections/zoomomba/zoomomba-details.html"
         >
           <summary>View Technical Details and Breakdown</summary>
           <div class="content-placeholder"></div>
