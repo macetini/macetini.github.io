@@ -15,7 +15,7 @@ div.gallery-item {
   margin: 5px;
   border: 1px solid #ccc;
   float: left; /* Aligns items horizontally */
-  width: 300px; /* Fixed width for each item (adjust as needed) */
+  width: 300px; /* Fixed width for each item (adjust as needed) */    
 }
 
 /* 3. Hover effect */
@@ -26,7 +26,7 @@ div.gallery-item:hover {
 /* 4. Styling for the image */
 div.gallery-item img {
   width: 100%; /* Makes the image fill its container */
-  height: auto;
+  height: auto;  
 }
 
 /* 5. Styling for the caption/description */
