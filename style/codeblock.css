@@ -70,8 +70,15 @@
   line-height: 1.5; /* Slightly increased line-height for better readability */
 }
 
-/* 6. COPY BUTTON */
-.copy-button {
+.code-block-controls {
+  background-color: #444;
+  display: flex;
+  justify-content: flex-end;
+  padding: 8px 12px;
+}
+
+.copy-code-button,
+.close-code-button {
   /* Size and padding */
   padding: 4px 10px;
   margin-left: 15px; /* Use a more generous margin */
@@ -88,11 +95,13 @@
   flex-shrink: 0;
 }
 
-.copy-button:hover {
+.copy-code-button:hover,
+.close-code-button:hover {
   background-color: #0056b3;
 }
 
-.copy-button:active {
+.copy-code-button:active,
+.close-code-button:active {
   /* Visual feedback on press */
   background-color: #003d80;
   transform: scale(0.98);

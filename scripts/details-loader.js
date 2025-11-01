@@ -41,6 +41,10 @@ export function initializeDetailTriggers(triggers) {
         return;
       }
       detailsElement.open = !detailsElement.open;
+      if (!detailsElement.open) {
+        // Optionally, scroll back to the trigger after closing
+        detailsElement.scrollIntoView({ behavior: "instant" });
+      }
     });
   });
 }

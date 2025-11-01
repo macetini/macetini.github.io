@@ -49,10 +49,25 @@ function onHtmlLoaded(html, element) {
     initializeDetailTriggers(detailTriggers);
   }
 
-  const copyButtons = document.querySelectorAll(".copy-button");
+  const copyButtons = document.querySelectorAll(".copy-code-button");
   copyButtons.forEach((button) => {
     button.addEventListener("click", (event) => {
       copyShaderCode(event, "code-details-" + button.dataset.codeId);
+    });
+  });
+
+  const closeButtons = document.querySelectorAll(".close-code-button");
+  closeButtons.forEach((element) => {
+    element.addEventListener("click", () => {
+      const detailsId = element.dataset.codeId;
+      const detailsElement = document.getElementById(detailsId);
+      if (detailsElement) {
+        detailsElement.open = false;
+        detailsElement.scrollIntoView({ behavior: "instant", block: "center" });
+
+      } else {
+        console.warn(`No details element found with ID: ${detailsId}`);
+      }
     });
   });
 
