@@ -43,7 +43,7 @@ export function initializeDetailTriggers(triggers) {
       detailsElement.open = !detailsElement.open;
       if (!detailsElement.open) {
         // Optionally, scroll back to the trigger after closing
-        detailsElement.scrollIntoView({ behavior: "instant" });
+        detailsElement.scrollIntoView({ behavior: "instant", block: "center" });
       }
     });
   });
