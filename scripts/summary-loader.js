@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
     return;
   }
 
-  [...summaryPlaceholders].forEach((summaryElement) => {
+  for (const summaryElement of summaryPlaceholders) {
     loadContent(summaryElement);
-  });
+  }
 });

@@ -3,10 +3,10 @@ import { initializeDetailTriggers } from "./details-loader.js";
 
 // Exported function to load content into a specified element
 export function loadContent(element) {
-  const contentUrl = element.getAttribute("data-content-url");
+  const contentUrl = element.dataset.contentUrl;
 
   // Safety check: Don't load if no URL is present or already loaded
-  if (!contentUrl || element.getAttribute("data-loaded") === "true") {
+  if (!contentUrl || element.dataset.loaded === "true") {
     console.warn("No content URL found or already loaded");
     return;
   }
@@ -35,7 +35,7 @@ export function loadContent(element) {
 // Function to handle the loaded HTML content
 function onHtmlLoaded(html, element) {
   element.innerHTML = html;
-  element.setAttribute("data-loaded", "true");
+  element.dataset.loaded = "true";
 
   // Initialize lightbox triggers for any new content, skip if none found (for example, in summaries without trigger images)
   const lightboxTriggers = element.querySelectorAll(".lightbox-trigger");
@@ -50,31 +50,30 @@ function onHtmlLoaded(html, element) {
   }
 
   const copyButtons = document.querySelectorAll(".copy-code-button");
-  copyButtons.forEach((button) => {
+  for (const button of copyButtons) {
     button.addEventListener("click", (event) => {
       copyShaderCode(event, "code-details-" + button.dataset.codeId);
     });
-  });
+  }
 
   const closeButtons = document.querySelectorAll(".close-code-button");
-  closeButtons.forEach((element) => {
+  for (const element of closeButtons) {
     element.addEventListener("click", () => {
       const detailsId = element.dataset.codeId;
       const detailsElement = document.getElementById(detailsId);
       if (detailsElement) {
         detailsElement.open = false;
         detailsElement.scrollIntoView({ behavior: "instant", block: "center" });
-
       } else {
         console.warn(`No details element found with ID: ${detailsId}`);
       }
     });
-  });
+  }
 
   const codeBlocks = document.querySelectorAll("code[data-src]");
 
-  codeBlocks.forEach((codeElement) => {
-    const filePath = codeElement.getAttribute("data-src");
+  for (const codeElement of codeBlocks) {
+    const filePath = codeElement.dataset.src;
 
     fetch(filePath)
       .then((response) => {
@@ -91,7 +90,7 @@ function onHtmlLoaded(html, element) {
         codeElement.textContent = `Error loading file: ${filePath}`;
         console.error("Fetch error:", error);
       });
-  });
+  }
 }
 
 function copyShaderCode(event, detailsId) {

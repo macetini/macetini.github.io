@@ -29,7 +29,7 @@ export function initializeLightboxTriggers(triggers) {
   const lightboxVideo = document.getElementById("lightbox-video");
 
   // Function to open the lightbox
-  triggers.forEach((trigger) => {
+  for (const trigger of triggers) {
     trigger.addEventListener("click", (e) => {
       e.preventDefault();
 
@@ -51,5 +51,5 @@ export function initializeLightboxTriggers(triggers) {
 
       lightbox.style.display = "flex";
     });
-  });
+  }
 }

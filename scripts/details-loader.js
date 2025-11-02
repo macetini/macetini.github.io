@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
     return;
   }
 
-  lazyDetails.forEach((detailsElement) => {
+  for (const detailsElement of lazyDetails) {
     detailsElement.addEventListener("toggle", (e) => {
       e.stopPropagation();
       if (detailsElement.open) {
@@ -26,15 +26,15 @@ document.addEventListener("DOMContentLoaded", () => {
         }
       }
     });
-  });
+  }
 });
 
 // Function to initialize the detail triggers
 export function initializeDetailTriggers(triggers) {
-  triggers.forEach((trigger) => {
+  for (const trigger of triggers) {
     trigger.addEventListener("click", (e) => {
       e.stopPropagation();
-      const detailsId = trigger.getAttribute("data-target-id");
+      const detailsId = trigger.dataset.targetId;
       const detailsElement = document.getElementById(detailsId);
       if (!detailsElement) {
         console.warn(`No details element found with ID: ${detailsId}`);
@@ -46,5 +46,5 @@ export function initializeDetailTriggers(triggers) {
         detailsElement.scrollIntoView({ behavior: "instant", block: "center" });
       }
     });
-  });
+  }
 }

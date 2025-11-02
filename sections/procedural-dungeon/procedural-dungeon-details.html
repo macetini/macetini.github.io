@@ -9,6 +9,28 @@
   </p>
 
   <figure class="project-item-container">
+    <iframe
+      style="width: 100%; height: auto; aspect-ratio: 16 / 9"
+      src="https://www.youtube.com/watch?v=kP87eM-PVQo"
+      title="YouTube video player"           
+    >
+    </iframe>
+    <figcaption>Procedural Dungeon Video</figcaption>
+  </figure>
+
+  <p>
+    The dungeon generation process begins with defining a set of parameters,
+    including the overall size of the dungeon, the number of rooms, and the
+    types of rooms to be included. The system then creates a layout by placing
+    rooms and corridors in a way that ensures connectivity and variety. Each
+    room is generated based on predefined templates, which can include different
+    layouts, sizes, and contents. The system then applies randomization to the
+    layout to make the dungeon more interesting and dynamic. Finally, the system
+    populates the dungeon with various elements, such as enemies, items, and
+    decorations, to enhance the gameplay experience.
+  </p>
+
+  <figure class="project-item-container">
     <a
       href="assets/procedural-dungeon/mov/dungeon_anim.webm"
       class="lightbox-trigger"
@@ -43,6 +65,58 @@
     </a>
     <figcaption>Dungeon Generation Process</figcaption>
   </figure>
+
+  <h3>Binary Space Partitioning</h3>
+
+  <p>
+    Binary Space Partitioning (BSP) is a method used to recursively subdivide a
+    space into smaller sections using hyperplanes. In the context of dungeon
+    generation, this technique is employed to create rooms and corridors by
+    dividing the available space into manageable chunks.
+  </p>
+
+  <p>
+    The process begins with a large rectangular area representing the entire
+    dungeon. This area is then split into two smaller sections, either
+    horizontally or vertically, creating Zones which will eventually contain
+    rooms. Each Zone is further subdivided recursively until a specified minimum
+    size is reached. The resulting Zones are then combined to form the final
+    dungeon.
+  </p>
+
+  <p>The code for the Zone algorithm is provided below:</p>
+
+  <details class="collapsible-code-block" id="code-details-zones-generator">
+    <summary>
+      <div class="summary-content">
+        <span>View Zones Generator Code (Click to Toggle)</span>
+      </div>
+    </summary>
+
+    <div class="code-block-controls">
+      <button class="copy-code-button" data-code-id="zones-generator">
+        Copy Code
+      </button>
+    </div>
+    <pre>
+    <code id="shaderCodeContent-zones-generator"
+      data-src="assets\procedural-dungeon\data\ZoneItem.cs">
+      Loading Code ...
+    </code>
+    </pre>
+
+    <div class="code-block-controls">
+      <button class="copy-code-button" data-code-id="zones-generator">
+        Copy Code
+      </button>
+      <button
+        class="close-code-button"
+        data-code-id="code-details-zones-generator"
+      >
+        Close
+      </button>
+    </div>
+  </details>
 
   <figure class="project-item-container">
     <a
