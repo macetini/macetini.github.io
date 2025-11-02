@@ -12,7 +12,7 @@
     <iframe
       style="width: 100%; height: auto; aspect-ratio: 16 / 9"
       src="https://www.youtube.com/watch?v=kP87eM-PVQo"
-      title="YouTube video player"           
+      title="YouTube video player"
     >
     </iframe>
     <figcaption>Procedural Dungeon Video</figcaption>
@@ -84,35 +84,37 @@
     dungeon.
   </p>
 
-  <p>The code for the Zone algorithm is provided below:</p>
+  <p>
+    Each Zone is represented by a Zone Item, which contains properties such as
+    size, position, and type. These properties are used to define the
+    characteristics of each Zone and influence how rooms and corridors are
+    generated within them.
+  </p>
 
-  <details class="collapsible-code-block" id="code-details-zones-generator">
+  <details class="collapsible-code-block" id="code-details-zone-item">
     <summary>
       <div class="summary-content">
-        <span>View Zones Generator Code (Click to Toggle)</span>
+        <span>View Zone Item Code (Click to Toggle)</span>
       </div>
     </summary>
 
     <div class="code-block-controls">
-      <button class="copy-code-button" data-code-id="zones-generator">
+      <button class="copy-code-button" data-code-id="zone-item">
         Copy Code
       </button>
     </div>
     <pre>
-    <code id="shaderCodeContent-zones-generator"
+    <code id="shaderCodeContent-zone-item"
       data-src="assets\procedural-dungeon\data\ZoneItem.cs">
       Loading Code ...
     </code>
     </pre>
 
     <div class="code-block-controls">
-      <button class="copy-code-button" data-code-id="zones-generator">
+      <button class="copy-code-button" data-code-id="zone-item">
         Copy Code
       </button>
-      <button
-        class="close-code-button"
-        data-code-id="code-details-zones-generator"
-      >
+      <button class="close-code-button" data-code-id="code-details-zone-item">
         Close
       </button>
     </div>
@@ -132,6 +134,37 @@
     <figcaption>Zone Configuration</figcaption>
   </figure>
 
+  <p>
+    Each Zone can be further divided into Sub Zones, which are smaller sections
+    within a Zone that can contain specific room types or features. Sub Zones
+    allow for more granular control over the layout and design of the dungeon.
+  </p>
+
+  <details class="collapsible-code-block" id="code-details-subzone">
+    <summary>
+      <div class="summary-content">
+        <span>View Sub Zone Code (Click to Toggle)</span>
+      </div>
+    </summary>
+
+    <div class="code-block-controls">
+      <button class="copy-code-button" data-code-id="subzone">Copy Code</button>
+    </div>
+    <pre>
+    <code id="shaderCodeContent-zones-item"
+      data-src="assets\procedural-dungeon\data\SubZone.cs">
+      Loading Code ...
+    </code>
+    </pre>
+
+    <div class="code-block-controls">
+      <button class="copy-code-button" data-code-id="subzone">Copy Code</button>
+      <button class="close-code-button" data-code-id="code-details-subzone">
+        Close
+      </button>
+    </div>
+  </details>
+
   <figure class="project-item-container">
     <a
       href="assets/procedural-dungeon/img/zone_inspector.webp"
@@ -145,6 +178,44 @@
     </a>
     <figcaption>Zone Item Details</figcaption>
   </figure>
+
+  <h3>Dungeon Sets</h3>
+
+  <p>
+    Dungeon Sets are collections of Scriptable Objects and configurations that
+    define the visual and gameplay style of a dungeon. Each set includes a
+    variety of room types, decorations, enemies, and items that fit within a
+    specific theme or aesthetic.
+  </p>
+
+  <details class="collapsible-code-block" id="code-details-dungeon-set">
+    <summary>
+      <div class="summary-content">
+        <span>View Dungeon Set Code (Click to Toggle)</span>
+      </div>
+    </summary>
+
+    <div class="code-block-controls">
+      <button class="copy-code-button" data-code-id="dungeon-set">
+        Copy Code
+      </button>
+    </div>
+    <pre>
+    <code id="shaderCodeContent-dungeon-set"
+      data-src="assets\procedural-dungeon\data\DungeonSet.cs">
+      Loading Code ...
+    </code>
+    </pre>
+
+    <div class="code-block-controls">
+      <button class="copy-code-button" data-code-id="dungeon-set">
+        Copy Code
+      </button>
+      <button class="close-code-button" data-code-id="code-details-dungeon-set">
+        Close
+      </button>
+    </div>
+  </details>
 
   <figure class="project-item-container-row">
     <a
@@ -171,8 +242,15 @@
   </figure>
 
   <figure class="project-item-container">
-    <p>Sets</p>
+    <p>Two different Dungeon Set configurations.</p>
   </figure>
+
+  <p>
+    Spawn Rooms are special rooms that serve as entry points or key locations
+    within the dungeon. They are defined using Spawn Room Items, which specify
+    the layout, size, and contents of the room. All dungeons generated from the
+    spawn room as an origin.
+  </p>
 
   <figure class="project-item-container">
     <a
@@ -189,6 +267,11 @@
   </figure>
 
   <h3>Dungeon Node Generation</h3>
+
+  <p>
+    Dungeon Node Generation is the process of creating and placing rooms within
+    the dungeon layout.
+  </p>
 
   <p>Room-specific generation logic:</p>
 

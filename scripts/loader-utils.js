@@ -52,7 +52,7 @@ function onHtmlLoaded(html, element) {
   const copyButtons = document.querySelectorAll(".copy-code-button");
   for (const button of copyButtons) {
     button.addEventListener("click", (event) => {
-      copyShaderCode(event, "code-details-" + button.dataset.codeId);
+      copyCode(event, "code-details-" + button.dataset.codeId);
     });
   }
 
@@ -93,7 +93,7 @@ function onHtmlLoaded(html, element) {
   }
 }
 
-function copyShaderCode(event, detailsId) {
+function copyCode(event, detailsId) {
   // 1. Stop the click event from toggling the <details> state
   //    We only want the button to copy, not expand/collapse the section.
   event.stopPropagation();
