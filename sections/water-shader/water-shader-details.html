@@ -304,6 +304,43 @@
     <figcaption>Distortion and underwater effect</figcaption>
   </figure>
 
+  <p>
+    The following code snippet demonstrates how depth-based color blending is
+    implemented in the shader to achieve realistic underwater coloration and
+    foam effects.
+  </p>
+
+  <p>The code is written in HLSL, and represents a Custom Node.</p>
+
+  <details class="collapsible-code-block" id="code-details-depth-blending">
+    <summary>
+      <div class="summary-content">
+        <span>View Depth Blending Code (Click to Toggle)</span>
+      </div>
+    </summary>
+
+    <div class="code-block-controls">
+      <button class="copy-code-button" data-code-id="depth-blending">
+        Copy Code
+      </button>
+    </div>
+    <pre>
+    <code id="shaderCodeContent-depth-blending"
+      data-src="assets\water-shader\data\DepthAbsorptionAndBlending.hlsl">
+      Loading Code ...
+    </code>
+    </pre>
+
+    <div class="code-block-controls">
+      <button class="copy-code-button" data-code-id="depth-blending">
+        Copy Code
+      </button>
+      <button class="close-code-button" data-code-id="code-details-depth-blending">
+        Close
+      </button>
+    </div>
+  </details>
+
   <h3>Glitter Effect</h3>
 
   <p>
@@ -350,7 +387,37 @@
     <figcaption>Glitter effect</figcaption>
   </figure>
 
-  <h3>Subsurface Scattering</h3>
+  <details class="collapsible-code-block" id="code-details-glitter">
+    <summary>
+      <div class="summary-content">
+        <span>View Glitter Effect Code (Click to Toggle)</span>
+      </div>
+    </summary>
+
+    <div class="code-block-controls">
+      <button class="copy-code-button" data-code-id="glitter">
+        Copy Code
+      </button>
+    </div>
+    <pre>
+    <code id="shaderCodeContent-glitter"
+      data-src="assets\water-shader\data\Glitter.hlsl">
+      Loading Code ...
+    </code>
+    </pre>
+
+    <div class="code-block-controls">
+      <button class="copy-code-button" data-code-id="glitter">
+        Copy Code
+      </button>
+      <button class="close-code-button" data-code-id="code-details-glitter">
+        Close
+      </button>
+    </div>
+  </details>
+
+
+  <h3>Subsurface Scattering*</h3>
 
   <p>
     The subsurface scattering effect enhances the realism of the water shader
@@ -358,6 +425,8 @@
     beneath it. This effect is not particularly visible in this environment but
     can be more pronounced in different conditions (e.g., shallow depth).
   </p>
+
+  <p><strong>Note:</strong> The subsurface scattering effect will be revised in the future as it does not seem to work well in URP Lit environment.</p>
 
   <figure class="project-item-container">
     <a
