@@ -12,7 +12,7 @@
     <iframe
       style="width: 100%; height: auto; aspect-ratio: 16 / 9"
       src="https://www.youtube.com/embed/kP87eM-PVQo?si=G9ZWP2dm94JYhtnA"
-      title="YouTube video player"      
+      title="YouTube video player"
       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
       referrerpolicy="strict-origin-when-cross-origin"
       allowfullscreen
@@ -271,11 +271,13 @@
   <h3>Dungeon Node Generation</h3>
 
   <p>
-    Dungeon Node Generation is the process of creating and placing rooms within
-    the dungeon layout.
+    Dungeon Node Generation is the process of creating individual rooms and
+    corridors within the dungeon based on predefined templates and condition.
+    Each room is generated based on Blueprints which is a set of rules,
+    conditions as size, layout, and contents. The system uses these rules to
+    create a variety of rooms that fit within the overall theme and style of the
+    dungeon.
   </p>
-
-  <p>Room-specific generation logic:</p>
 
   <figure class="project-item-container">
     <a
@@ -311,6 +313,16 @@
     </figcaption>
   </figure>
 
+  <p>
+    Each Room Blueprint defines the structure and layout of a room, including
+    walls, doors, and other architectural features. The system uses these
+    blueprints to create rooms that are both functional and visually appealing.
+    Additionally, Room Items can be added to each room to populate it with
+    furniture, decorations, enemies, and other interactive elements. These items
+    can be placed based on specific conditions, such as room type or player
+    progression, to enhance the gameplay experience.
+  </p>
+
   <figure class="project-item-container">
     <a
       href="assets/procedural-dungeon/img/room_1_blueprint_inspector.webp"
@@ -324,6 +336,53 @@
     </a>
     <figcaption>Room Blueprint Configuration</figcaption>
   </figure>
+
+  <p>
+    Room Conditions are used to determine whether a specific Room Item can be
+    placed within a room based on certain criteria. These conditions can include
+    factors such as room size, type, or the presence of specific features. By
+    using Room Conditions, the system ensures that Room Items are placed in
+    appropriate locations, enhancing the overall coherence and design of the
+    dungeon.
+  </p>
+
+  <p>
+    Conditions are applied to Room Items. Below is an example of a Room
+    Condition, named <b>ConnectWithWallCondition</b>. The condition ensures that the
+    room is connected to a wall.
+  </p>
+
+  <details class="collapsible-code-block" id="code-details-room-condition">
+    <summary>
+      <div class="summary-content">
+        <span>View Room Condition Code (Click to Toggle)</span>
+      </div>
+    </summary>
+
+    <div class="code-block-controls">
+      <button class="copy-code-button" data-code-id="room-condition">
+        Copy Code
+      </button>
+    </div>
+    <pre>
+    <code id="shaderCodeContent-room-condition"
+      data-src="assets\procedural-dungeon\data\ConnectWithWallCondition.cs">
+      Loading Code ...
+    </code>
+    </pre>
+
+    <div class="code-block-controls">
+      <button class="copy-code-button" data-code-id="room-condition">
+        Copy Code
+      </button>
+      <button
+        class="close-code-button"
+        data-code-id="code-details-room-condition"
+      >
+        Close
+      </button>
+    </div>
+  </details>
 
   <figure class="project-item-container">
     <a
