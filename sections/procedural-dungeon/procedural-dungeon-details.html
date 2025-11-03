@@ -34,6 +34,49 @@
 
   <figure class="project-item-container">
     <a
+      href="assets/procedural-dungeon/img/procedural_dungeon_definition_inspector.webp"
+      class="lightbox-trigger"
+    >
+      <img
+        class="project-image"
+        src="assets/procedural-dungeon/img/procedural_dungeon_definition_inspector.webp"
+        alt="Inspector view of the Procedural Dungeon Definition settings."
+      />
+    </a>
+    <figcaption>Procedural Dungeon Definition Settings</figcaption>
+  </figure>
+
+  <p>
+    All the dungeon elements are created in the <b>Candidates Factory</b> class.
+    The number of elements is not the exact but targeted number, as some
+    elements may not meet the placement conditions. The factory ensures that the
+    generated dungeon adheres to the defined parameters while maintaining a
+    certain level of randomness.
+  </p>
+
+  <figure class="project-item-container">
+    <a
+      href="assets/procedural-dungeon/img/dungeon_generation_factory.webp"
+      class="lightbox-trigger"
+    >
+      <img
+        class="project-image"
+        src="assets/procedural-dungeon/img/dungeon_generation_factory.webp"
+        alt="Inspector view of the Dungeon Generation Factory settings."
+      />
+    </a>
+    <figcaption>Dungeon Generation Factory Settings</figcaption>
+  </figure>
+
+  <p>
+    The dungeon generation process is initiated by calling the
+    <b>GenerateDungeon</b> method, which orchestrates the entire process from
+    layout creation to element placement. The result is a unique and engaging
+    dungeon that can be explored by players.
+  </p>
+
+  <figure class="project-item-container">
+    <a
       href="assets/procedural-dungeon/mov/dungeon_anim.webm"
       class="lightbox-trigger"
     >
@@ -268,7 +311,7 @@
     <figcaption>Spawn Room Item (Room Asset)</figcaption>
   </figure>
 
-  <h3>Dungeon Node Generation</h3>
+  <h2>Dungeon Node Generation</h2>
 
   <p>
     Dungeon Node Generation is the process of creating individual rooms and
@@ -348,8 +391,8 @@
 
   <p>
     Conditions are applied to Room Items. Below is an example of a Room
-    Condition, named <b>ConnectWithWallCondition</b>. The condition ensures that the
-    room is connected to a wall.
+    Condition, named <b>ConnectWithWallCondition</b>. The condition ensures that
+    the room is connected to a wall.
   </p>
 
   <details class="collapsible-code-block" id="code-details-room-condition">
@@ -397,6 +440,17 @@
     </a>
     <figcaption>Room Item with Conditional Generation</figcaption>
   </figure>
+
+  <p>
+    By combining Room Blueprints and Room Conditions, the dungeon generation
+    system can create diverse and engaging rooms that contribute to the overall
+    experience of exploring a procedurally generated dungeon.
+  </p>
+
+  <p>
+    Project is still in development, and more features will be added. For now
+    the assets are rudimentary, but the concept is solid.
+  </p>
 
   <ul>
     <li>
