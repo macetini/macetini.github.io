@@ -34,7 +34,11 @@
     </summary>
 
     <div class="code-block-controls">
-      <button class="copy-code-button" type="button" data-code-id="spline-inspector">
+      <button
+        class="copy-code-button"
+        type="button"
+        data-code-id="spline-inspector"
+      >
         Copy Code
       </button>
     </div>
@@ -46,7 +50,11 @@
     </pre>
 
     <div class="code-block-controls">
-      <button class="copy-code-button" type="button" data-code-id="spline-inspector">
+      <button
+        class="copy-code-button"
+        type="button"
+        data-code-id="spline-inspector"
+      >
         Copy Code
       </button>
       <button
@@ -135,6 +143,53 @@
   </figure>
 
   <p>
+    This shader was an unreleased experimental feature. Although the project was
+    modernized to Unity 2025, no further development is planned, as Unity now
+    offers a built-in Spline System.
+  </p>
+
+  <details class="collapsible-code-block" id="code-details-bender-shader">
+    <summary>
+      <div class="summary-content">
+        <span>View Full UV Curve Shader Code (Click to Toggle)</span>
+      </div>
+    </summary>
+
+    <div class="code-block-controls">
+      <button
+        class="copy-code-button"
+        type="button"
+        data-code-id="bender-shader"
+      >
+        Copy Code
+      </button>
+    </div>
+
+    <pre>
+    <code data-src="assets/bender-shader/data/UVCurveShader.shader">
+      Loading Code ... 
+    </code>    
+    </pre>
+
+    <div class="code-block-controls">
+      <button
+        class="copy-code-button"
+        type="button"
+        data-code-id="bender-shader"
+      >
+        Copy Code
+      </button>
+      <button
+        class="close-code-button"
+        type="button"
+        data-code-id="code-details-bender-shader"
+      >
+        Close
+      </button>
+    </div>
+  </details>
+
+  <p>
     The curve can be modified in real-time, with the model updating instantly.
   </p>
 
@@ -149,7 +204,7 @@
         alt="Curve modification animation showing real-time updates."
         autoplay
         loop
-        muted       
+        muted
       >
         <source
           src="assets/bender-shader/mov/uv_modification_anim.webm"
@@ -174,6 +229,40 @@
     <figcaption>Curve Modification</figcaption>
   </figure>
 
+  <details class="collapsible-code-block" id="code-details-uv-curve">
+    <summary>
+      <div class="summary-content">
+        <span>View Full UV Curve Code (Click to Toggle)</span>
+      </div>
+    </summary>
+
+    <div class="code-block-controls">
+      <button class="copy-code-button" type="button" data-code-id="uv-curve">
+        Copy Code
+      </button>
+    </div>
+
+    <pre>
+    <code
+      data-src="assets/bender-shader/data/UVCurve.cs">
+      Loading Code ... 
+    </code>    
+    </pre>
+
+    <div class="code-block-controls">
+      <button class="copy-code-button" type="button" data-code-id="uv-curve">
+        Copy Code
+      </button>
+      <button
+        class="close-code-button"
+        type="button"
+        data-code-id="code-details-uv-curve"
+      >
+        Close
+      </button>
+    </div>
+  </details>
+
   <h2>Dynamic Curve</h2>
 
   <p>
@@ -186,14 +275,13 @@
       href="assets/bender-shader/mov/curved_anim.webm"
       class="lightbox-trigger"
       title="Movement along the Curve Animation"
-
     >
       <video
         class="project-video"
         alt="Animated video simulating a movement along the curve."
         autoplay
         loop
-        muted       
+        muted
       >
         <source
           src="assets/bender-shader/mov/curved_anim.webm"
@@ -235,7 +323,7 @@
         alt="Animated video simulating a movement along the curve."
         autoplay
         loop
-        muted       
+        muted
       >
         <source
           src="assets/bender-shader/mov/curved_inspector_anim.webm"
@@ -260,6 +348,48 @@
     <figcaption>Curved Animation</figcaption>
   </figure>
 
+  <details class="collapsible-code-block" id="code-details-curve-controller">
+    <summary>
+      <div class="summary-content">
+        <span>View Full Curve Controller Code (Click to Toggle)</span>
+      </div>
+    </summary>
+
+    <div class="code-block-controls">
+      <button
+        class="copy-code-button"
+        type="button"
+        data-code-id="curve-controller"
+      >
+        Copy Code
+      </button>
+    </div>
+
+    <pre>
+    <code
+     data-src="assets/bender-shader/data/CurveController.cs">
+      Loading Code ... 
+    </code>    
+    </pre>
+
+    <div class="code-block-controls">
+      <button
+        class="copy-code-button"
+        type="button"
+        data-code-id="curve-controller"
+      >
+        Copy Code
+      </button>
+      <button
+        class="close-code-button"
+        type="button"
+        data-code-id="code-details-curve-controller"
+      >
+        Close
+      </button>
+    </div>
+  </details>
+
   <h2>Curved Particles</h2>
 
   <p>The shader can also be used to animate particles along the curve.</p>
@@ -275,7 +405,7 @@
         alt="Animated video showing particles moving along the curve."
         autoplay
         loop
-        muted        
+        muted
       >
         <source
           src="assets/bender-shader/mov/curve_particels_anim.webm"
@@ -300,39 +430,41 @@
     <figcaption>Curved Particle Animation</figcaption>
   </figure>
 
-  <p>
-    This shader was an unreleased experimental feature. Although the project was
-    modernized to Unity 2025, no further development is planned, as Unity now
-    offers a built-in Spline System.
-  </p>
-
-  <details class="collapsible-code-block" id="code-details-bender-shader">
+  <details class="collapsible-code-block" id="code-details-curved-particles">
     <summary>
       <div class="summary-content">
-        <span>View Full Shader Code (Click to Toggle)</span>
+        <span>View Full Curved Particles Code (Click to Toggle)</span>
       </div>
     </summary>
 
     <div class="code-block-controls">
-      <button class="copy-code-button" data-code-id="bender-shader">
+      <button
+        class="copy-code-button"
+        type="button"
+        data-code-id="curved-particles"
+      >
         Copy Code
       </button>
     </div>
 
     <pre>
-    <code id="shaderCodeContent-curveShader"
-      data-src="assets/bender-shader/data/UVCurveShader.shader">
+    <code data-src="assets/bender-shader/data/CurvedParticles.cs">
       Loading Code ... 
     </code>    
     </pre>
 
     <div class="code-block-controls">
-      <button class="copy-code-button" data-code-id="bender-shader">
+      <button
+        class="copy-code-button"
+        type="button"
+        data-code-id="curved-particles"
+      >
         Copy Code
       </button>
       <button
         class="close-code-button"
-        data-code-id="code-details-bender-shader"
+        type="button"
+        data-code-id="code-details-curved-particles"
       >
         Close
       </button>

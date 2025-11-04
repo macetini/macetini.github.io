@@ -51,6 +51,15 @@
   font-weight: bold;
 }
 
+.project-iframe {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  border: none;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
 /* Reinstated box-model styles for media elements */
 .project-banner,
 .project-image,
@@ -84,11 +93,4 @@
     flex-direction: column;
     justify-content: flex-start;
   }
-}
-
-.hidden-iframe {
-  /* 1. Remove Border */
-  border: none;
-  /* 2. Hide Overflow */
-  overflow: hidden;
 }
