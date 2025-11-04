@@ -15,8 +15,8 @@
 .lightbox-content {
   max-width: 97%;
   max-height: 100%;
-  display: block;
-  margin: 0 auto;  
+  display: none;
+  margin: 0 auto;
   animation: zoom 0.6s;
 }
 
