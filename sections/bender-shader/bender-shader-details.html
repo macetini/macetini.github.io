@@ -22,7 +22,45 @@
   </figure>
 
   <p>
-    The spline curve is defined by a series of points and populated with a
+    The spline is user-defined within the Unity Editor, allowing for real-time
+    modifications and animations.
+  </p>
+
+  <details class="collapsible-code-block" id="code-details-spline-inspector">
+    <summary>
+      <div class="summary-content">
+        <span>View Spline Inspector Code (Click to Toggle)</span>
+      </div>
+    </summary>
+
+    <div class="code-block-controls">
+      <button class="copy-code-button" type="button" data-code-id="spline-inspector">
+        Copy Code
+      </button>
+    </div>
+    <pre>
+    <code id="shaderCodeContent-spline-inspector"
+      data-src="assets\bender-shader\data\BezierSplineInspector.cs">
+      Loading Code ...
+    </code>
+    </pre>
+
+    <div class="code-block-controls">
+      <button class="copy-code-button" type="button" data-code-id="spline-inspector">
+        Copy Code
+      </button>
+      <button
+        class="close-code-button"
+        type="button"
+        data-code-id="code-details-spline-inspector"
+      >
+        Close
+      </button>
+    </div>
+  </details>
+
+  <p>
+    The spline curve is then used to deform a mesh, which is populated with a
     specified prefab. The shader then deforms the mesh vertices to align along
     the curve, allowing for real-time modifications and animations.
   </p>
@@ -104,14 +142,14 @@
     <a
       href="assets/bender-shader/mov/uv_modification_anim.webm"
       class="lightbox-trigger"
+      title="Curve Modification Animation"
     >
       <video
         class="project-video"
         alt="Curve modification animation showing real-time updates."
         autoplay
         loop
-        muted
-        playsinline
+        muted       
       >
         <source
           src="assets/bender-shader/mov/uv_modification_anim.webm"
@@ -147,14 +185,15 @@
     <a
       href="assets/bender-shader/mov/curved_anim.webm"
       class="lightbox-trigger"
+      title="Movement along the Curve Animation"
+
     >
       <video
         class="project-video"
         alt="Animated video simulating a movement along the curve."
         autoplay
         loop
-        muted
-        playsinline
+        muted       
       >
         <source
           src="assets/bender-shader/mov/curved_anim.webm"
@@ -189,14 +228,14 @@
     <a
       href="assets/bender-shader/mov/curved_inspector_anim.webm"
       class="lightbox-trigger"
+      title="Curved Animation"
     >
       <video
         class="project-video"
         alt="Animated video simulating a movement along the curve."
         autoplay
         loop
-        muted
-        playsinline
+        muted       
       >
         <source
           src="assets/bender-shader/mov/curved_inspector_anim.webm"
@@ -229,14 +268,14 @@
     <a
       href="assets/bender-shader/mov/curve_particels_anim.webm"
       class="lightbox-trigger"
+      title="Curved Particle Animation"
     >
       <video
         class="project-video"
         alt="Animated video showing particles moving along the curve."
         autoplay
         loop
-        muted
-        playsinline
+        muted        
       >
         <source
           src="assets/bender-shader/mov/curve_particels_anim.webm"
