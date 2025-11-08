@@ -1,0 +1,91 @@
+<summary>View Technical Details and Breakdown</summary>
+<div>
+  <h2>Overview</h2>
+
+  <p>
+    Few years ago, I found an old Java Project of mine from high school; a java
+    implementation of the classic Tetris. It was on a old floppy disk, and I was
+    curious to see if I could bring it back to life in a modern way. I decided
+    to modernize it to Java 8 and improve the code structure.
+  </p>
+
+  <p>
+    The final result was then compiled to WebAssembly using
+    <a href="https://cheerpj.com/">CheerpJ</a>, allowing it to run directly in
+    web browsers without any plugins.
+  </p>
+
+  <p>
+    The game features standard Tetris mechanics, including piece rotation, line
+    clearing, and score tracking. The controls are mapped to the arrow keys for
+    movement and rotation. Left/Right arrows move the pieces, Up arrow rotates
+    them, and Down arrow speeds up their descent.
+  </p>
+
+  <figure class="project-item-container">
+    <iframe
+      title="JTetris"
+      width="82%"
+      height="965"
+      src="https://macetini.github.io/JTetris/build/"
+    ></iframe>
+    <figcaption>Tetris CheerpJ Web Export</figcaption>
+  </figure>
+
+  <p>GameLoop class shown below is responsible for managing the main game loop:</p>
+
+  <details class="collapsible-code-block" id="code-details-game-loop">
+    <summary>
+      <div class="summary-content">
+        <span>View Full Game Loop Code (Click to Toggle)</span>
+      </div>
+    </summary>
+
+    <div class="code-block-controls">
+      <button
+        class="copy-code-button"
+        type="button"
+        data-code-id="game-loop"
+      >
+        Copy Code
+      </button>
+    </div>
+
+    <pre>
+    <code
+     data-src="https://macetini.github.io/assets/java-tetris/data/GameLoop.java">
+      Loading Code ... 
+    </code>    
+    </pre>
+
+    <div class="code-block-controls">
+      <button
+        class="copy-code-button"
+        type="button"
+        data-code-id="game-loop"
+      >
+        Copy Code
+      </button>
+      <button
+        class="close-code-button"
+        type="button"
+        data-code-id="code-details-game-loop"
+      >
+        Close
+      </button>
+    </div>
+  </details>
+
+  <ul>
+    <li>
+      <a href="#java-tetris">Back To Summary</a>
+    </li>
+    <li>
+      <a href="#top">Back To Top</a>
+    </li>
+  </ul>
+
+  <p class="detail-trigger" data-target-id="java-tetris-details">
+    Close Details
+  </p>
+</div>

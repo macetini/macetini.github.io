@@ -1,0 +1,486 @@
+<summary>View Technical Details and Breakdown</summary>
+<div>
+  <h2>Overview</h2>
+
+  <p>
+    In the early 2010s, I created a custom Unity shader to deform 3D mesh
+    vertices along a defined spline, enabling dynamic, interactive bending.
+  </p>
+
+  <figure class="project-item-container">
+    <a
+      href="https://macetini.github.io/assets/bender-shader/img/overview_inspector_and_game.webp"
+      class="lightbox-trigger"
+    >
+      <img
+        class="project-image"
+        src="https://macetini.github.io/assets/bender-shader/img/overview_inspector_and_game.webp"
+        alt="Curved Mesh Generation Overview."
+      />
+    </a>
+    <figcaption>Curved Mesh Generation Overview</figcaption>
+  </figure>
+
+  <p>
+    The spline is user-defined within the Unity Editor, allowing for real-time
+    modifications and animations.
+  </p>
+
+  <details class="collapsible-code-block" id="code-details-spline-inspector">
+    <summary>
+      <div class="summary-content">
+        <span>View Spline Inspector Code (Click to Toggle)</span>
+      </div>
+    </summary>
+
+    <div class="code-block-controls">
+      <button
+        class="copy-code-button"
+        type="button"
+        data-code-id="spline-inspector"
+      >
+        Copy Code
+      </button>
+    </div>
+    <pre>
+    <code
+      data-src="assets\bender-shader\data\BezierSplineInspector.cs">
+      Loading Code ...
+    </code>
+    </pre>
+
+    <div class="code-block-controls">
+      <button
+        class="copy-code-button"
+        type="button"
+        data-code-id="spline-inspector"
+      >
+        Copy Code
+      </button>
+      <button
+        class="close-code-button"
+        type="button"
+        data-code-id="code-details-spline-inspector"
+      >
+        Close
+      </button>
+    </div>
+  </details>
+
+  <p>
+    The spline curve is then used to deform a mesh, which is populated with a
+    specified prefab. The shader then deforms the mesh vertices to align along
+    the curve, allowing for real-time modifications and animations.
+  </p>
+
+  <figure class="project-item-container">
+    <a
+      href="https://macetini.github.io/assets/bender-shader/img/spline_example.webp"
+      class="lightbox-trigger"
+    >
+      <img
+        class="project-image"
+        src="https://macetini.github.io/assets/bender-shader/img/spline_example.webp"
+        alt="UV Spline example in Unity editor."
+      />
+    </a>
+    <figcaption>User Defined Spline.</figcaption>
+  </figure>
+
+  <figure class="project-item-container">
+    <a
+      href="https://macetini.github.io/assets/bender-shader/img/curve_prefap.webp"
+      class="lightbox-trigger"
+    >
+      <img
+        class="project-image"
+        src="https://macetini.github.io/assets/bender-shader/img/curve_prefap.webp"
+        alt="UV Curve Item Prefab in the Unity Editor."
+      />
+    </a>
+    <figcaption>UV Curve Item Prefab.</figcaption>
+  </figure>
+
+  <p>
+    Both the Spline and Prefab are configured in the Unity Inspector using the
+    UVCurve.cs component.
+  </p>
+
+  <figure class="project-item-container">
+    <a
+      href="https://macetini.github.io/assets/bender-shader/img/curve_settings_inspector.webp"
+      class="lightbox-trigger"
+    >
+      <img
+        class="project-image"
+        src="https://macetini.github.io/assets/bender-shader/img/curve_settings_inspector.webp"
+        alt="Unity Inspector showing UV Curve parameters."
+      />
+    </a>
+    <figcaption>Unity Inspector showing UV Curve parameters.</figcaption>
+  </figure>
+
+  <p>Users can populate and configure the spline with prefabs as needed.</p>
+
+  <h2>Static Curve</h2>
+
+  <p>
+    The result is a model composed of meshes deformed to match the static curve.
+  </p>
+
+  <figure class="project-item-container">
+    <a
+      href="https://macetini.github.io/assets/bender-shader/img/curve_example.webp"
+      class="lightbox-trigger"
+    >
+      <img
+        class="project-image"
+        src="https://macetini.github.io/assets/bender-shader/img/curve_example.webp"
+        alt="Populated UV Curve."
+      />
+    </a>
+    <figcaption>Static Curve Example.</figcaption>
+  </figure>
+
+  <p>
+    This shader was an unreleased experimental feature. Although the project was
+    modernized to Unity 2025, no further development is planned, as Unity now
+    offers a built-in Spline System.
+  </p>
+
+  <details class="collapsible-code-block" id="code-details-bender-shader">
+    <summary>
+      <div class="summary-content">
+        <span>View Full UV Curve Shader Code (Click to Toggle)</span>
+      </div>
+    </summary>
+
+    <div class="code-block-controls">
+      <button
+        class="copy-code-button"
+        type="button"
+        data-code-id="bender-shader"
+      >
+        Copy Code
+      </button>
+    </div>
+
+    <pre>
+    <code data-src="https://macetini.github.io/assets/bender-shader/data/UVCurveShader.shader">
+      Loading Code ... 
+    </code>    
+    </pre>
+
+    <div class="code-block-controls">
+      <button
+        class="copy-code-button"
+        type="button"
+        data-code-id="bender-shader"
+      >
+        Copy Code
+      </button>
+      <button
+        class="close-code-button"
+        type="button"
+        data-code-id="code-details-bender-shader"
+      >
+        Close
+      </button>
+    </div>
+  </details>
+
+  <p>
+    The curve can be modified in real-time, with the model updating instantly.
+  </p>
+
+  <figure class="project-item-container">
+    <a
+      href="https://macetini.github.io/assets/bender-shader/mov/uv_modification_anim.webm"
+      class="lightbox-trigger"
+      title="Curve Modification Animation"
+    >
+      <video
+        class="project-video"
+        alt="Curve modification animation showing real-time updates."
+        autoplay
+        loop
+        muted
+      >
+        <source
+          src="https://macetini.github.io/assets/bender-shader/mov/uv_modification_anim.webm"
+          type="video/webm"
+        />
+        <source
+          src="https://macetini.github.io/assets/bender-shader/mov/uv_modification_anim.mp4"
+          type="video/mp4"
+        />
+
+        <track
+          kind="descriptions"
+          label="Visual Description"
+          srclang="en"
+          src="https://macetini.github.io/assets/bender-shader/mov/uv_modification_anim_en.vtt"
+          default
+        />
+
+        Your browser does not support the video tag.
+      </video>
+    </a>
+    <figcaption>Curve Modification</figcaption>
+  </figure>
+
+  <details class="collapsible-code-block" id="code-details-uv-curve">
+    <summary>
+      <div class="summary-content">
+        <span>View Full UV Curve Code (Click to Toggle)</span>
+      </div>
+    </summary>
+
+    <div class="code-block-controls">
+      <button class="copy-code-button" type="button" data-code-id="uv-curve">
+        Copy Code
+      </button>
+    </div>
+
+    <pre>
+    <code
+      data-src="https://macetini.github.io/assets/bender-shader/data/UVCurve.cs">
+      Loading Code ... 
+    </code>    
+    </pre>
+
+    <div class="code-block-controls">
+      <button class="copy-code-button" type="button" data-code-id="uv-curve">
+        Copy Code
+      </button>
+      <button
+        class="close-code-button"
+        type="button"
+        data-code-id="code-details-uv-curve"
+      >
+        Close
+      </button>
+    </div>
+  </details>
+
+  <h2>Dynamic Curve</h2>
+
+  <p>
+    Beyond a static curve, the shader can also create the illusion of movement
+    along the path.
+  </p>
+
+  <figure class="project-item-container">
+    <a
+      href="https://macetini.github.io/assets/bender-shader/mov/curved_anim.webm"
+      class="lightbox-trigger"
+      title="Movement along the Curve Animation"
+    >
+      <video
+        class="project-video"
+        alt="Animated video simulating a movement along the curve."
+        autoplay
+        loop
+        muted
+      >
+        <source
+          src="https://macetini.github.io/assets/bender-shader/mov/curved_anim.webm"
+          type="video/webm"
+        />
+        <source
+          src="https://macetini.github.io/assets/bender-shader/mov/curved_anim.mp4"
+          type="video/mp4"
+        />
+
+        <track
+          kind="descriptions"
+          label="Visual Description"
+          srclang="en"
+          src="https://macetini.github.io/assets/bender-shader/mov/curved_anim_en.vtt"
+          default
+        />
+
+        Your browser does not support the video tag.
+      </video>
+    </a>
+    <figcaption>Movement along the curve.</figcaption>
+  </figure>
+
+  <p>
+    Crucially, the camera is static. The illusion is created by the curve
+    deforming the model around the origin while simultaneously moving the meshes
+    toward the camera.
+  </p>
+
+  <figure class="project-item-container">
+    <a
+      href="https://macetini.github.io/assets/bender-shader/mov/curved_inspector_anim.webm"
+      class="lightbox-trigger"
+      title="Curved Animation"
+    >
+      <video
+        class="project-video"
+        alt="Animated video simulating a movement along the curve."
+        autoplay
+        loop
+        muted
+      >
+        <source
+          src="https://macetini.github.io/assets/bender-shader/mov/curved_inspector_anim.webm"
+          type="video/webm"
+        />
+        <source
+          src="https://macetini.github.io/assets/bender-shader/mov/curved_inspector_anim.mp4"
+          type="video/mp4"
+        />
+
+        <track
+          kind="descriptions"
+          label="Visual Description"
+          srclang="en"
+          src="https://macetini.github.io/assets/bender-shader/mov/curved_inspector_anim_en.vtt"
+          default
+        />
+
+        Your browser does not support the video tag.
+      </video>
+    </a>
+    <figcaption>Curved Animation</figcaption>
+  </figure>
+
+  <details class="collapsible-code-block" id="code-details-curve-controller">
+    <summary>
+      <div class="summary-content">
+        <span>View Full Curve Controller Code (Click to Toggle)</span>
+      </div>
+    </summary>
+
+    <div class="code-block-controls">
+      <button
+        class="copy-code-button"
+        type="button"
+        data-code-id="curve-controller"
+      >
+        Copy Code
+      </button>
+    </div>
+
+    <pre>
+    <code
+     data-src="https://macetini.github.io/assets/bender-shader/data/CurveController.cs">
+      Loading Code ... 
+    </code>    
+    </pre>
+
+    <div class="code-block-controls">
+      <button
+        class="copy-code-button"
+        type="button"
+        data-code-id="curve-controller"
+      >
+        Copy Code
+      </button>
+      <button
+        class="close-code-button"
+        type="button"
+        data-code-id="code-details-curve-controller"
+      >
+        Close
+      </button>
+    </div>
+  </details>
+
+  <h2>Curved Particles</h2>
+
+  <p>The shader can also be used to animate particles along the curve.</p>
+
+  <figure class="project-item-container">
+    <a
+      href="https://macetini.github.io/assets/bender-shader/mov/curve_particels_anim.webm"
+      class="lightbox-trigger"
+      title="Curved Particle Animation"
+    >
+      <video
+        class="project-video"
+        alt="Animated video showing particles moving along the curve."
+        autoplay
+        loop
+        muted
+      >
+        <source
+          src="https://macetini.github.io/assets/bender-shader/mov/curve_particels_anim.webm"
+          type="video/webm"
+        />
+        <source
+          src="https://macetini.github.io/assets/bender-shader/mov/curve_particels_anim.mp4"
+          type="video/mp4"
+        />
+
+        <track
+          kind="descriptions"
+          label="Visual Description"
+          srclang="en"
+          src="https://macetini.github.io/assets/bender-shader/mov/curve_particels_anim_en.vtt"
+          default
+        />
+
+        Your browser does not support the video tag.
+      </video>
+    </a>
+    <figcaption>Curved Particle Animation</figcaption>
+  </figure>
+
+  <details class="collapsible-code-block" id="code-details-curved-particles">
+    <summary>
+      <div class="summary-content">
+        <span>View Full Curved Particles Code (Click to Toggle)</span>
+      </div>
+    </summary>
+
+    <div class="code-block-controls">
+      <button
+        class="copy-code-button"
+        type="button"
+        data-code-id="curved-particles"
+      >
+        Copy Code
+      </button>
+    </div>
+
+    <pre>
+    <code data-src="https://macetini.github.io/assets/bender-shader/data/CurvedParticles.cs">
+      Loading Code ... 
+    </code>    
+    </pre>
+
+    <div class="code-block-controls">
+      <button
+        class="copy-code-button"
+        type="button"
+        data-code-id="curved-particles"
+      >
+        Copy Code
+      </button>
+      <button
+        class="close-code-button"
+        type="button"
+        data-code-id="code-details-curved-particles"
+      >
+        Close
+      </button>
+    </div>
+  </details>
+
+  <ul>
+    <li>
+      <a href="#bender-shader">Back To Summary</a>
+    </li>
+    <li>
+      <a href="#top">Back To Top</a>
+    </li>
+  </ul>
+
+  <p class="detail-trigger" data-target-id="bender-shader-details">
+    Close Details
+  </p>
+</div>

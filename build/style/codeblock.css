@@ -1,0 +1,108 @@
+/* 1. MAIN CONTAINER: Styles for the <details> element */
+.collapsible-code-block {
+  /* Box model */
+  border: 1px solid #ddd; /* Lighter border for modern look */
+  border-radius: 6px;
+  margin: 15px 0;
+  /* Appearance */
+  background-color: #ffffff; /* White background for the outer container */
+  overflow: hidden; /* Prevents border-radius clipping issues on content */
+}
+
+/* 2. HEADER/SUMMARY: Styles for the clickable title area */
+.collapsible-code-block summary {
+  /* Layout */
+  display: flex;
+  align-items: center; /* Vertically center the arrow, text, and button */
+  padding: 10px 15px;
+  /* Appearance */
+  background-color: #f0f0f0; /* Light gray header */
+  cursor: pointer;
+  font-weight: 600; /* Slightly bolder than 'bold' */
+  color: #333;
+  /* Reset browser defaults */
+  list-style: none; /* Remove default marker */
+  outline: none;
+}
+
+/* 3. ARROW/ICON: Custom expand/collapse indicator (using flex order to keep it left) */
+.collapsible-code-block summary::before {
+  content: "▶";
+  display: block; /* Use 'block' with a slight margin to separate from text */
+  margin-right: 10px;
+  font-size: 0.9em;
+  transition: transform 0.2s;
+  /* Ensure the arrow is visually appealing and centered */
+  line-height: 1;
+}
+
+/* Rotate the arrow when the block is open */
+.collapsible-code-block[open] summary::before {
+  content: "▼";
+}
+
+/* Active state for click feedback on the summary header */
+.collapsible-code-block summary:active {
+  background-color: #e0e0e0;
+}
+
+/* 4. CONTENT ALIGNMENT: Container for title text and copy button */
+.summary-content {
+  flex-grow: 1; /* Allows it to take up all remaining space */
+  display: flex;
+  justify-content: space-between; /* Pushes the button to the right end */
+  align-items: center;
+}
+
+/* 5. CODE BLOCK: Styles for the <pre> element holding the code */
+.collapsible-code-block pre {
+  margin: 0; /* Remove default margin */
+  padding: 15px;
+  background-color: #282c34; /* Popular dark VS Code theme background (or keep #272822) */
+  color: #abb2bf; /* Light, legible text color */
+  overflow-x: auto; /* Required for long lines */
+  border-top: 1px solid #444; /* Small separation line */
+}
+
+/* Optional: Style the <code> element itself */
+.collapsible-code-block code {
+  font-family: "Fira Code", Consolas, Monaco, monospace; /* Recommend Fira Code if available */
+  line-height: 1.5; /* Slightly increased line-height for better readability */
+}
+
+.code-block-controls {
+  background-color: #444;
+  display: flex;
+  justify-content: flex-end;
+  padding: 8px 12px;
+}
+
+.copy-code-button,
+.close-code-button {
+  /* Size and padding */
+  padding: 4px 10px;
+  margin-left: 15px; /* Use a more generous margin */
+  /* Appearance */
+  background-color: #007bff; /* Primary blue color */
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 0.8em;
+  transition: background-color 0.2s, transform 0.1s;
+  /* Ensure button doesn't trigger the details toggle */
+  flex-shrink: 0;
+}
+
+.copy-code-button:hover,
+.close-code-button:hover {
+  background-color: #0056b3;
+}
+
+.copy-code-button:active,
+.close-code-button:active {
+  /* Visual feedback on press */
+  background-color: #003d80;
+  transform: scale(0.98);
+}

@@ -1,0 +1,86 @@
+body {
+  font-family: sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  background-color: #ebebeb;
+  color: #333;
+}
+
+header {
+  background: #333;
+  color: #fff;
+  padding: 1rem 0;
+  text-align: center;
+}
+
+summary {
+  cursor: pointer;
+  font-weight: bold;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+  margin: 0 15px;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+main {
+  max-width: 1000px;
+  margin: 20px auto;
+  padding: 0 20px;
+}
+
+section {
+  background: #fff;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+section p {
+  color: #333;
+}
+
+footer {
+  text-align: center;
+  padding: 20px 0;
+  background: #333;
+  color: #fff;
+}
+
+@media print {
+  /* 1. Hide unwanted elements (headers, footers, nav bars) */
+  header,
+  footer,
+  nav,
+  .sidebar,
+  .contact-form,
+  .print-button {
+    display: none !important;
+  }
+
+  /* 2. Force a clean background */
+  body {
+    background: white !important;
+  }
+
+  /* 3. Force page breaks for projects/sections */
+  .project-section,
+  .about-section {
+    page-break-after: always;
+    /* Prevent content from starting too close to the edge */
+    padding-top: 1in;
+  }
+
+  /* 4. Ensure links are still visible */
+  a {
+    color: #000; /* Use black text */
+    text-decoration: none; /* Remove underline */
+  }
+}

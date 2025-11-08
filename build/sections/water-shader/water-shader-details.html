@@ -1,0 +1,594 @@
+<summary>View Technical Details and Breakdown</summary>
+<div>
+  <h2>Overview</h2>
+
+  <p>
+    After following the Flow tutorial series by Jasper Flick of Catlike Coding,
+    I decided to create my own water shader based on the techniques taught in
+    the series. The goal was to create a shader that mimics the behavior of
+    water surface like waves.
+  </p>
+
+  <figure class="project-item-container">
+    <iframe
+      class="project-iframe"
+      src="https://www.youtube.com/embed/vCDe6oVhS8M?si=g2fI17x9SF2tjioR"
+      title="YouTube video player"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      referrerpolicy="strict-origin-when-cross-origin"
+      allowfullscreen
+    >
+    </iframe>
+    <figcaption>Water Shader Video</figcaption>
+  </figure>
+
+  <h2>Technical Details</h2>
+
+  <p>
+    The shader uses Gerstner (Trochoidal) Waves to simulate realistic wave
+    behavior. Gerstner waves are a mathematical model that describes the motion
+    of water waves, allowing for the creation of complex wave patterns by
+    combining multiple wave functions.
+  </p>
+
+  <p>Key features of the Water Shader include:</p>
+
+  <ul>
+    <li>Gerstner Wave Vertex Displacement</li>
+    <li>Adjustable wave parameters: amplitude,</li>
+    <li>
+      Adjustable wave parameters: amplitude, wavelength ,frequency, and
+      direction
+    </li>
+    <li>Planar and SkyBox reflection</li>
+    <li>Subsurface scattering and glitter effects</li>
+    <li>Normal maps displacement and distortion</li>
+    <li>Foam and underwater distortion effects</li>
+    <li>Customizable wave colors</li>
+  </ul>
+
+  <figure class="project-item-container">
+    <a
+      href="https://macetini.github.io/assets/water-shader/img/shader_options.webp"
+      class="lightbox-trigger"
+    >
+      <img
+        class="project-image"
+        src="https://macetini.github.io/assets/water-shader/img/shader_options.webp"
+        alt="UV Spline example in Unity editor."
+      />
+    </a>
+    <figcaption>URP Shader Material Customization Options</figcaption>
+  </figure>
+
+  <p>
+    The shader is implemented in Unity3D and supports both the Universal Render
+    Pipeline (URP) and the Built-in Render Pipeline (BiRP). This ensures
+    compatibility with a wide range of Unity projects.
+  </p>
+
+  <h2>BiRP</h2>
+
+  <p>
+    The original shader was created using Unity's Built-in Render Pipeline
+    (BiRP). It utilizes Unity3d built in Surface Shader to handle lighting and
+    shading calculations.
+  </p>
+
+  <p>
+    As the BiRP is an older rendering pipeline, it is not actively developed any
+    more. Therefore, the rest of the details will focus on the URP version.
+  </p>
+
+  <figure class="project-item-container">
+    <a
+      href="https://macetini.github.io/assets/water-shader/mov/birp_anim.webm"
+      class="lightbox-trigger"
+      title="BiRP Water Shader Animation"
+    >
+      <video
+        class="project-video"
+        alt="Animated video showing BiRP water shader."
+        autoplay
+        loop
+        muted
+      >
+        <source
+          src="https://macetini.github.io/assets/water-shader/mov/birp_anim.webm"
+          type="video/webm"
+        />
+        <source src="https://macetini.github.io/assets/water-shader/mov/birp_anim.mp4" type="video/mp4" />
+
+        <track
+          kind="descriptions"
+          label="Visual Description"
+          srclang="en"
+          src="https://macetini.github.io/assets/water-shader/mov/birp_anim_en.vtt"
+          default
+        />
+
+        Your browser does not support the video tag.
+      </video>
+    </a>
+    <figcaption>BiRP Water Shader</figcaption>
+  </figure>
+
+  <p>Full shader code available below:</p>
+
+  <details class="collapsible-code-block" id="code-details-water-shader-urp">
+    <summary>
+      <div class="summary-content">
+        <span>View Full Shader Code (Click to Toggle)</span>
+      </div>
+    </summary>
+
+    <div class="code-block-controls">
+      <button
+        class="copy-code-button"
+        type="button"
+        data-code-id="water-shader-urp"
+      >
+        Copy Code
+      </button>
+    </div>
+
+    <pre>
+    <code
+     data-src="https://macetini.github.io/assets/water-shader/data/LitGesternWave.shader">
+      Loading Code ... 
+    </code>    
+    </pre>
+
+    <div class="code-block-controls">
+      <button
+        class="copy-code-button"
+        type="button"
+        data-code-id="water-shader-urp"
+      >
+        Copy Code
+      </button>
+      <button
+        class="close-code-button"
+        type="button"
+        data-code-id="code-details-water-shader-urp"
+      >
+        Close
+      </button>
+    </div>
+  </details>
+
+  <h2>URP</h2>
+
+  <p>
+    The URP version of the shader is built using Unity's Shader Graph, which
+    allows for a more visual approach to shader development. Shader Graph
+    provides a node-based interface for creating shaders, making it easier to
+    understand and modify the shader's behavior.
+  </p>
+
+  <p>
+    The URP shader maintains the same features as the BiRP version but takes
+    advantage of the performance optimizations and modern rendering techniques
+    available in URP.
+  </p>
+
+  <figure class="project-item-container">
+    <a
+      href="https://macetini.github.io/assets/water-shader/mov/urp_anim.webm"
+      class="lightbox-trigger"
+      title="URP Water Shader Animation"
+    >
+      <video
+        class="project-video"
+        alt="Animated video showing URP water shader."
+        autoplay
+        loop
+        muted
+      >
+        <source src="https://macetini.github.io/assets/water-shader/mov/urp_anim.webm" type="video/webm" />
+
+        <source src="https://macetini.github.io/assets/water-shader/mov/urp_anim.mp4" type="video/mp4" />
+
+        <track
+          kind="descriptions"
+          label="Visual Description"
+          srclang="en"
+          src="https://macetini.github.io/assets/water-shader/mov/urp_anim_en.vtt"
+          default
+        />
+
+        Your browser does not support the video tag.
+      </video>
+    </a>
+    <figcaption>URP Water Shader</figcaption>
+  </figure>
+
+  <p>
+    URP shader is written using wih a mixture of built-in nodes and custom HLSL
+    nodes. Unfortunately, because of it's size the full graph is not easily
+    presented.
+  </p>
+
+  <figure class="project-item-container">
+    <a
+      href="https://macetini.github.io/assets/water-shader/img/sg_urp_water.webp"
+      class="lightbox-trigger"
+    >
+      <img
+        class="project-image"
+        src="https://macetini.github.io/assets/water-shader/img/sg_urp_water.webp"
+        alt="URP Shader Graph Nodes."
+      />
+    </a>
+    <figcaption>URP Shader Graph Nodes</figcaption>
+  </figure>
+
+  <h3>Surface Customization</h3>
+
+  <p>
+    The URP water shader offers a variety of customization options through
+    exposed parameters in the Shader Graph. Users can adjust wave properties,
+    colors, and effects to achieve the desired look for their water surfaces.
+  </p>
+
+  <figure class="project-item-container">
+    <a
+      href="https://macetini.github.io/assets/water-shader/mov/custom_values_anim.webm"
+      class="lightbox-trigger"
+      title="Values Customization Animation"
+    >
+      <video
+        class="project-video"
+        alt="Animated video showing customization of the wave values."
+        autoplay
+        loop
+        muted
+      >
+        <source
+          src="https://macetini.github.io/assets/water-shader/mov/custom_values_anim.webm"
+          type="video/webm"
+        />
+        <source
+          src="https://macetini.github.io/assets/water-shader/mov/custom_values_anim.mp4"
+          type="video/mp4"
+        />
+
+        <track
+          kind="descriptions"
+          label="Visual Description"
+          srclang="en"
+          src="https://macetini.github.io/assets/water-shader/mov/custom_values_anim_en.vtt"
+          default
+        />
+
+        Your browser does not support the video tag.
+      </video>
+    </a>
+    <figcaption>Values Customization</figcaption>
+  </figure>
+
+  <p>
+    The full shader customization, like change of bumps, distortion maps and
+    their values is outside the scope of this article.
+  </p>
+
+  <h3>Distortion, underwater and foam effects</h3>
+
+  <p>
+    The shader incorporates distortion effects to simulate the refraction of
+    light as it passes through the water surface. This effect is achieved by
+    using normal maps to perturb the UV coordinates of the underlying texture,
+    creating a wavy appearance.
+  </p>
+
+  <p>
+    Additionally, the shader includes underwater effects that simulate the
+    visual distortion experienced when viewing objects beneath the water
+    surface. Foam effects are also implemented to enhance the realism of wave
+    crests and shorelines.
+  </p>
+
+  <figure class="project-item-container">
+    <a
+      href="https://macetini.github.io/assets/water-shader/mov/distortion_anim.webm"
+      class="lightbox-trigger"
+      title="Distortion Effect Animation"
+    >
+      <video
+        class="project-video"
+        alt="Animated video showing distortion effect on URP water shader."
+        autoplay
+        loop
+        muted
+      >
+        <source
+          src="https://macetini.github.io/assets/water-shader/mov/distortion_anim.webm"
+          type="video/webm"
+        />
+        <source
+          src="https://macetini.github.io/assets/water-shader/mov/distortion_anim.mp4"
+          type="video/mp4"
+        />
+
+        <track
+          kind="descriptions"
+          label="Visual Description"
+          srclang="en"
+          src="https://macetini.github.io/assets/water-shader/mov/distortion_anim_en.vtt"
+          default
+        />
+
+        Your browser does not support the video tag.
+      </video>
+    </a>
+    <figcaption>Distortion and underwater effect</figcaption>
+  </figure>
+
+  <p>
+    The following code snippet demonstrates how depth-based color blending is
+    implemented in the shader to achieve realistic underwater coloration and
+    foam effects.
+  </p>
+
+  <p>The code is written in HLSL, and represents a Custom Node.</p>
+
+  <details class="collapsible-code-block" id="code-details-depth-blending">
+    <summary>
+      <div class="summary-content">
+        <span>View Depth Blending Code (Click to Toggle)</span>
+      </div>
+    </summary>
+
+    <div class="code-block-controls">
+      <button class="copy-code-button" data-code-id="depth-blending">
+        Copy Code
+      </button>
+    </div>
+    <pre>
+    <code
+      data-src="assets\water-shader\data\DepthAbsorptionAndBlending.hlsl">
+      Loading Code ...
+    </code>
+    </pre>
+
+    <div class="code-block-controls">
+      <button class="copy-code-button" data-code-id="depth-blending">
+        Copy Code
+      </button>
+      <button
+        class="close-code-button"
+        data-code-id="code-details-depth-blending"
+      >
+        Close
+      </button>
+    </div>
+  </details>
+
+  <h3>Glitter Effect</h3>
+
+  <p>
+    One of the standout features of the water shader is the glitter effect,
+    which simulates the sparkling appearance of sunlight reflecting off the
+    water surface. This effect is achieved by calculating the angle between the
+    view direction and the light source, and modulating the brightness based on
+    this angle.
+  </p>
+
+  <figure class="project-item-container">
+    <a
+      href="https://macetini.github.io/assets/water-shader/mov/glitter_anim.webm"
+      class="lightbox-trigger"
+      title="Glitter Effect Animation"
+    >
+      <video
+        class="project-video"
+        alt="Animated video showing glitter effect on URP water shader."
+        autoplay
+        loop
+        muted
+      >
+        <source
+          src="https://macetini.github.io/assets/water-shader/mov/glitter_anim.webm"
+          type="video/webm"
+        />
+        <source
+          src="https://macetini.github.io/assets/water-shader/mov/glitter_anim.mp4"
+          type="video/mp4"
+        />
+
+        <track
+          kind="descriptions"
+          label="Visual Description"
+          srclang="en"
+          src="https://macetini.github.io/assets/water-shader/mov/glitter_anim_en.vtt"
+          default
+        />
+
+        Your browser does not support the video tag.
+      </video>
+    </a>
+    <figcaption>Glitter effect</figcaption>
+  </figure>
+
+  <details class="collapsible-code-block" id="code-details-glitter">
+    <summary>
+      <div class="summary-content">
+        <span>View Glitter Effect Code (Click to Toggle)</span>
+      </div>
+    </summary>
+
+    <div class="code-block-controls">
+      <button class="copy-code-button" type="button" data-code-id="glitter">
+        Copy Code
+      </button>
+    </div>
+    <pre>
+    <code
+      data-src="assets\water-shader\data\Glitter.hlsl">
+      Loading Code ...
+    </code>
+    </pre>
+
+    <div class="code-block-controls">
+      <button class="copy-code-button" type="button" data-code-id="glitter">
+        Copy Code
+      </button>
+      <button
+        class="close-code-button"
+        type="button"
+        data-code-id="code-details-glitter"
+      >
+        Close
+      </button>
+    </div>
+  </details>
+
+  <h3>Subsurface Scattering*</h3>
+
+  <p>
+    The subsurface scattering effect enhances the realism of the water shader by
+    simulating the way light penetrates the water surface and scatters beneath
+    it. This effect is not particularly visible in this environment but can be
+    more pronounced in different conditions (e.g., shallow depth).
+  </p>
+
+  <p>
+    <strong>Note:</strong> The subsurface scattering effect will be revised in
+    the future as it does not seem to work well in URP Lit environment.
+  </p>
+
+  <figure class="project-item-container">
+    <a
+      href="https://macetini.github.io/assets/water-shader/mov/glitter_anim.webm"
+      class="lightbox-trigger"
+      title="Subsurface Scattering Effect Animation"
+    >
+      <video
+        class="project-video"
+        alt="Animated video showing subsurface scattering effect on URP water shader."
+        autoplay
+        loop
+        muted
+      >
+        <source src="https://macetini.github.io/assets/water-shader/mov/sss_anim.webm" type="video/webm" />
+
+        <source src="https://macetini.github.io/assets/water-shader/mov/sss_anim.mp4" type="video/mp4" />
+
+        <track
+          kind="descriptions"
+          label="Visual Description"
+          srclang="en"
+          src="https://macetini.github.io/assets/water-shader/mov/sss_anim_en.vtt"
+          default
+        />
+
+        Your browser does not support the video tag.
+      </video>
+    </a>
+    <figcaption>Subsurface Scattering Effect</figcaption>
+  </figure>
+
+  <h3>Unlit Shader</h3>
+
+  <p>
+    In addition to the lit shader, an unlit version of the water shader is also
+    available. The unlit shader focuses on the visual aspects of the water
+    surface without incorporating lighting calculations, making it suitable for
+    specific artistic styles or performance considerations. It was created as a
+    draft of the lit version and it does not have all the features of the lit
+    shader. It mainly focuses on the wave displacement and basic color effects
+    and it lacks features like reflections or subsurface scattering. It can be
+    used in scenarios where lighting effects are not required or desired.
+  </p>
+
+  <figure class="project-item-container">
+    <a
+      href="https://macetini.github.io/assets/water-shader/mov/unlit_anim.webm"
+      class="lightbox-trigger"
+      title="Unlit Water Shader Animation"
+    >
+      <video
+        class="project-video"
+        alt="Animated video showing unlit water shader."
+        autoplay
+        loop
+        muted
+      >
+        <source
+          src="https://macetini.github.io/assets/water-shader/mov/unlit_anim.webm"
+          type="video/webm"
+        />
+        <source src="https://macetini.github.io/assets/water-shader/mov/unlit_anim.mp4" type="video/mp4" />
+
+        <track
+          kind="descriptions"
+          label="Visual Description"
+          srclang="en"
+          src="https://macetini.github.io/assets/water-shader/mov/unlit_anim_en.vtt"
+          default
+        />
+
+        Your browser does not support the video tag.
+      </video>
+    </a>
+    <figcaption>Unlit Shader</figcaption>
+  </figure>
+
+  <details
+    class="collapsible-code-block"
+    id="code-details-water-unlit-shader-urp"
+  >
+    <summary>
+      <div class="summary-content">
+        <span>View Full Shader Code (Click to Toggle)</span>
+      </div>
+    </summary>
+
+    <div class="code-block-controls">
+      <button
+        class="copy-code-button"
+        type="button"
+        ata-code-id="water-unlit-shader-urp"
+      >
+        Copy Code
+      </button>
+    </div>
+
+    <pre>
+    <code
+      data-src="https://macetini.github.io/assets/water-shader/data/UnlitGesternWave.shader">
+      Loading Code ... 
+    </code>    
+    </pre>
+
+    <div class="code-block-controls">
+      <button
+        class="copy-code-button"
+        type="button"
+        data-code-id="water-unlit-shader-urp"
+      >
+        Copy Code
+      </button>
+      <button
+        class="close-code-button"
+        type="button"
+        data-code-id="code-details-water-unlit-shader-urp"
+      >
+        Close
+      </button>
+    </div>
+  </details>
+
+  <ul>
+    <li>
+      <a href="#water-shader">Back To Summary</a>
+    </li>
+    <li>
+      <a href="#top">Back To Top</a>
+    </li>
+  </ul>
+
+  <p class="detail-trigger" data-target-id="water-shader-details">
+    Close Details
+  </p>
+</div>

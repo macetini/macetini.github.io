@@ -1,0 +1,488 @@
+<summary>View Technical Details and Breakdown</summary>
+<div>
+  <h2>Full Dungeon Generation</h2>
+
+  <p>
+    A Procedural dungeon generation system built in Unity using C#. It generates
+    dungeons by creating and connecting elements, such as rooms and corridors,
+    using a combination of randomization and algorithms.
+  </p>
+
+  <figure class="project-item-container">
+    <iframe
+      class="project-iframe"
+      src="https://www.youtube.com/embed/kP87eM-PVQo?si=G9ZWP2dm94JYhtnA"
+      title="YouTube video player"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      referrerpolicy="strict-origin-when-cross-origin"
+      allowfullscreen
+    ></iframe>
+    <figcaption>Procedural Dungeon Video</figcaption>
+  </figure>
+
+  <p>
+    The dungeon generation process begins with defining a set of parameters,
+    including the overall size of the dungeon, the number of rooms, and the
+    types of rooms to be included. The system then creates a layout by placing
+    rooms and corridors in a way that ensures connectivity and variety. Each
+    room is generated based on predefined templates, which can include different
+    layouts, sizes, and contents. The system then applies randomization to the
+    layout to make the dungeon more interesting and dynamic. Finally, the system
+    populates the dungeon with various elements, such as enemies, items, and
+    decorations, to enhance the gameplay experience.
+  </p>
+
+  <figure class="project-item-container">
+    <a
+      href="https://macetini.github.io/assets/procedural-dungeon/img/procedural_dungeon_definition_inspector.webp"
+      class="lightbox-trigger"
+    >
+      <img
+        class="project-image"
+        src="https://macetini.github.io/assets/procedural-dungeon/img/procedural_dungeon_definition_inspector.webp"
+        alt="Inspector view of the Procedural Dungeon Definition settings."
+      />
+    </a>
+    <figcaption>Procedural Dungeon Definition Settings</figcaption>
+  </figure>
+
+  <p>
+    All the dungeon elements are created in the <b>Candidates Factory</b> class.
+    The number of elements is not the exact but targeted number, as some
+    elements may not meet the placement conditions. The factory ensures that the
+    generated dungeon adheres to the defined parameters while maintaining a
+    certain level of randomness.
+  </p>
+
+  <figure class="project-item-container">
+    <a
+      href="https://macetini.github.io/assets/procedural-dungeon/img/dungeon_generation_factory.webp"
+      class="lightbox-trigger"
+    >
+      <img
+        class="project-image"
+        src="https://macetini.github.io/assets/procedural-dungeon/img/dungeon_generation_factory.webp"
+        alt="Inspector view of the Dungeon Generation Factory settings."
+      />
+    </a>
+    <figcaption>Dungeon Generation Factory Settings</figcaption>
+  </figure>
+
+  <p>
+    The dungeon generation process is initiated by calling the
+    <b>GenerateDungeon</b> method, which orchestrates the entire process from
+    layout creation to element placement. The result is a unique and engaging
+    dungeon that can be explored by players.
+  </p>
+
+  <figure class="project-item-container">
+    <a
+      href="https://macetini.github.io/assets/procedural-dungeon/mov/dungeon_anim.webm"
+      class="lightbox-trigger"
+      title="Dungeon Generation Animation"
+    >
+      <video
+        class="project-video"
+        alt="Animated video showing a dungeon being generated."
+        autoplay
+        loop
+        muted
+      >
+        <source
+          src="https://macetini.github.io/assets/procedural-dungeon/mov/dungeon_anim.webm"
+          type="video/webm"
+        />
+        <source
+          src="https://macetini.github.io/assets/procedural-dungeon/mov/dungeon_anim.mp4"
+          type="video/mp4"
+        />
+
+        <track
+          kind="descriptions"
+          label="Visual Description"
+          srclang="en"
+          src="https://macetini.github.io/assets/procedural-dungeon/mov/dungeon_desc_en.vtt"
+          default
+        />
+
+        Your browser does not support the video tag.
+      </video>
+    </a>
+    <figcaption>Dungeon Generation Process</figcaption>
+  </figure>
+
+  <h3>Binary Space Partitioning</h3>
+
+  <p>
+    Binary Space Partitioning (BSP) is a method used to recursively subdivide a
+    space into smaller sections using hyperplanes. In the context of dungeon
+    generation, this technique is employed to create rooms and corridors by
+    dividing the available space into manageable chunks.
+  </p>
+
+  <p>
+    The process begins with a large rectangular area representing the entire
+    dungeon. This area is then split into two smaller sections, either
+    horizontally or vertically, creating Zones which will eventually contain
+    rooms. Each Zone is further subdivided recursively until a specified minimum
+    size is reached. The resulting Zones are then combined to form the final
+    dungeon.
+  </p>
+
+  <p>
+    Each Zone is represented by a Zone Item, which contains properties such as
+    size, position, and type. These properties are used to define the
+    characteristics of each Zone and influence how rooms and corridors are
+    generated within them.
+  </p>
+
+  <details class="collapsible-code-block" id="code-details-zone-item">
+    <summary>
+      <div class="summary-content">
+        <span>View Zone Item Code (Click to Toggle)</span>
+      </div>
+    </summary>
+
+    <div class="code-block-controls">
+      <button class="copy-code-button" type="button" data-code-id="zone-item">
+        Copy Code
+      </button>
+    </div>
+    <pre>
+    <code
+      data-src="assets\procedural-dungeon\data\ZoneItem.cs">
+      Loading Code ...
+    </code>
+    </pre>
+
+    <div class="code-block-controls">
+      <button class="copy-code-button" type="button" data-code-id="zone-item">
+        Copy Code
+      </button>
+      <button
+        class="close-code-button"
+        type="button"
+        data-code-id="code-details-zone-item"
+      >
+        Close
+      </button>
+    </div>
+  </details>
+
+  <figure class="project-item-container">
+    <a
+      href="https://macetini.github.io/assets/procedural-dungeon/img/spwanzone_inspector.webp"
+      class="lightbox-trigger"
+    >
+      <img
+        class="project-image"
+        src="https://macetini.github.io/assets/procedural-dungeon/img/spwanzone_inspector.webp"
+        alt="Screenshot of the Unity Inspector showing Spawn Zone parameters."
+      />
+    </a>
+    <figcaption>Zone Configuration</figcaption>
+  </figure>
+
+  <p>
+    Each Zone can be further divided into Sub Zones, which are smaller sections
+    within a Zone that can contain specific room types or features. Sub Zones
+    allow for more granular control over the layout and design of the dungeon.
+  </p>
+
+  <details class="collapsible-code-block" id="code-details-subzone">
+    <summary>
+      <div class="summary-content">
+        <span>View Sub Zone Code (Click to Toggle)</span>
+      </div>
+    </summary>
+
+    <div class="code-block-controls">
+      <button class="copy-code-button" type="button" data-code-id="subzone">
+        Copy Code
+      </button>
+    </div>
+    <pre>
+    <code
+      data-src="assets\procedural-dungeon\data\SubZone.cs">
+      Loading Code ...
+    </code>
+    </pre>
+
+    <div class="code-block-controls">
+      <button class="copy-code-button" type="button" data-code-id="subzone">
+        Copy Code
+      </button>
+      <button
+        class="close-code-button"
+        type="button"
+        data-code-id="code-details-subzone"
+      >
+        Close
+      </button>
+    </div>
+  </details>
+
+  <figure class="project-item-container">
+    <a
+      href="https://macetini.github.io/assets/procedural-dungeon/img/zone_inspector.webp"
+      class="lightbox-trigger"
+    >
+      <img
+        class="project-image"
+        src="https://macetini.github.io/assets/procedural-dungeon/img/zone_inspector.webp"
+        alt="Screenshot of the Unity Inspector showing Zone Item configuration."
+      />
+    </a>
+    <figcaption>Zone Item Details</figcaption>
+  </figure>
+
+  <h3>Dungeon Sets</h3>
+
+  <p>
+    Dungeon Sets are collections of Scriptable Objects and configurations that
+    define the visual and gameplay style of a dungeon. Each set includes a
+    variety of room types, decorations, enemies, and items that fit within a
+    specific theme or aesthetic.
+  </p>
+
+  <details class="collapsible-code-block" id="code-details-dungeon-set">
+    <summary>
+      <div class="summary-content">
+        <span>View Dungeon Set Code (Click to Toggle)</span>
+      </div>
+    </summary>
+
+    <div class="code-block-controls">
+      <button class="copy-code-button" type="button" data-code-id="dungeon-set">
+        Copy Code
+      </button>
+    </div>
+    <pre>
+    <code
+      data-src="assets\procedural-dungeon\data\DungeonSet.cs">
+      Loading Code ...
+    </code>
+    </pre>
+
+    <div class="code-block-controls">
+      <button class="copy-code-button" type="button" data-code-id="dungeon-set">
+        Copy Code
+      </button>
+      <button
+        class="close-code-button"
+        type="button"
+        data-code-id="code-details-dungeon-set"
+      >
+        Close
+      </button>
+    </div>
+  </details>
+
+  <figure class="project-item-container-row">
+    <a
+      href="https://macetini.github.io/assets/procedural-dungeon/img/dungeon_set_blue_inspector.webp"
+      class="lightbox-trigger"
+    >
+      <img
+        class="project-image"
+        src="https://macetini.github.io/assets/procedural-dungeon/img/dungeon_set_blue_inspector.webp"
+        alt="Inspector view of the Blue Dungeon Set assets."
+      />
+    </a>
+
+    <a
+      href="https://macetini.github.io/assets/procedural-dungeon/img/dungeon_set_default_inspector.webp"
+      class="lightbox-trigger"
+    >
+      <img
+        class="project-image"
+        src="https://macetini.github.io/assets/procedural-dungeon/img/dungeon_set_default_inspector.webp"
+        alt="Inspector view of the Default Dungeon Set assets."
+      />
+    </a>
+  </figure>
+
+  <figure class="project-item-container">
+    <p>Two different Dungeon Set configurations.</p>
+  </figure>
+
+  <p>
+    Spawn Rooms are special rooms that serve as entry points or key locations
+    within the dungeon. They are defined using Spawn Room Items, which specify
+    the layout, size, and contents of the room. All dungeons generated from the
+    spawn room as an origin.
+  </p>
+
+  <figure class="project-item-container">
+    <a
+      href="https://macetini.github.io/assets/procedural-dungeon/img/spawn_room_item_inspector.webp"
+      class="lightbox-trigger"
+    >
+      <img
+        class="project-image"
+        src="https://macetini.github.io/assets/procedural-dungeon/img/spawn_room_item_inspector.webp"
+        alt="Inspector view of a Spawn Room Item configuration."
+      />
+    </a>
+    <figcaption>Spawn Room Item (Room Asset)</figcaption>
+  </figure>
+
+  <h2>Dungeon Node Generation</h2>
+
+  <p>
+    Dungeon Node Generation is the process of creating individual rooms and
+    corridors within the dungeon based on predefined templates and condition.
+    Each room is generated based on Blueprints which is a set of rules,
+    conditions as size, layout, and contents. The system uses these rules to
+    create a variety of rooms that fit within the overall theme and style of the
+    dungeon.
+  </p>
+
+  <figure class="project-item-container">
+    <a
+      href="https://macetini.github.io/assets/procedural-dungeon/mov/node_anim.webm"
+      class="lightbox-trigger"
+      title="Room Node Generation Animation"
+    >
+      <video
+        class="project-video"
+        alt="Animated video showing a single room's generation process."
+        autoplay
+        loop
+        muted
+      >
+        <source
+          src="https://macetini.github.io/assets/procedural-dungeon/mov/node_anim.webm"
+          type="video/webm"
+        />
+
+        <track
+          kind="descriptions"
+          label="Visual Description (Room Node)"
+          srclang="en"
+          src="https://macetini.github.io/assets/procedural-dungeon/mov/node_desc_en.vtt"
+          default
+        />
+
+        Your browser does not support the video tag.
+      </video>
+    </a>
+    <figcaption>
+      Room Node Generation Example (Explaining item placement logic)
+    </figcaption>
+  </figure>
+
+  <p>
+    Each Room Blueprint defines the structure and layout of a room, including
+    walls, doors, and other architectural features. The system uses these
+    blueprints to create rooms that are both functional and visually appealing.
+    Additionally, Room Items can be added to each room to populate it with
+    furniture, decorations, enemies, and other interactive elements. These items
+    can be placed based on specific conditions, such as room type or player
+    progression, to enhance the gameplay experience.
+  </p>
+
+  <figure class="project-item-container">
+    <a
+      href="https://macetini.github.io/assets/procedural-dungeon/img/room_1_blueprint_inspector.webp"
+      class="lightbox-trigger"
+    >
+      <img
+        class="project-image"
+        src="https://macetini.github.io/assets/procedural-dungeon/img/room_1_blueprint_inspector.webp"
+        alt="Inspector view of a Room Blueprint asset."
+      />
+    </a>
+    <figcaption>Room Blueprint Configuration</figcaption>
+  </figure>
+
+  <p>
+    Room Conditions are used to determine whether a specific Room Item can be
+    placed within a room based on certain criteria. These conditions can include
+    factors such as room size, type, or the presence of specific features. By
+    using Room Conditions, the system ensures that Room Items are placed in
+    appropriate locations, enhancing the overall coherence and design of the
+    dungeon.
+  </p>
+
+  <p>
+    Conditions are applied to Room Items. Below is an example of a Room
+    Condition, named <b>ConnectWithWallCondition</b>. The condition ensures that
+    the room is connected to a wall.
+  </p>
+
+  <details class="collapsible-code-block" id="code-details-room-condition">
+    <summary>
+      <div class="summary-content">
+        <span>View Room Condition Code (Click to Toggle)</span>
+      </div>
+    </summary>
+
+    <div class="code-block-controls">
+      <button class="copy-code-button" type="button" data-code-id="room-condition">
+        Copy Code
+      </button>
+    </div>
+    <pre>
+    <code
+      data-src="assets\procedural-dungeon\data\ConnectWithWallCondition.cs">
+      Loading Code ...
+    </code>
+    </pre>
+
+    <div class="code-block-controls">
+      <button
+        class="copy-code-button"
+        type="button"
+        data-code-id="room-condition"
+      >
+        Copy Code
+      </button>
+      <button
+        class="close-code-button"
+        type="button"
+        data-code-id="code-details-room-condition"
+      >
+        Close
+      </button>
+    </div>
+  </details>
+
+  <figure class="project-item-container">
+    <a
+      href="https://macetini.github.io/assets/procedural-dungeon/img/room_item_with_conditions_inspector.webp"
+      class="lightbox-trigger"
+    >
+      <img
+        class="project-image"
+        src="https://macetini.github.io/assets/procedural-dungeon/img/room_item_with_conditions_inspector.webp"
+        alt="Inspector view of a Room Item with conditional generation settings."
+      />
+    </a>
+    <figcaption>Room Item with Conditional Generation</figcaption>
+  </figure>
+
+  <p>
+    By combining Room Blueprints and Room Conditions, the dungeon generation
+    system can create diverse and engaging rooms that contribute to the overall
+    experience of exploring a procedurally generated dungeon.
+  </p>
+
+  <p>
+    Project is still in development, and more features will be added. For now
+    the assets are rudimentary, but the concept is solid.
+  </p>
+
+  <ul>
+    <li>
+      <a href="#bender-shader">Back To Summary</a>
+    </li>
+    <li>
+      <a href="#top">Back To Top</a>
+    </li>
+  </ul>
+
+  <p class="detail-trigger" data-target-id="procedural-dungeon-details">
+    Close Details
+  </p>
+</div>

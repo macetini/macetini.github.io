@@ -1,0 +1,154 @@
+<summary>View Technical Details and Breakdown</summary>
+<div>
+  <h2>Overview</h2>
+
+  <p>
+    Back in the day (2013/2014), I created a few games using Adobe AIR. I wanted
+    to aquatinted myself with a new Stage3D platform. Today Adobe AIR has been
+    taken over by Harman, and I decided to revisit one of my old projects and
+    bring it back to life using the new Harman AIR SDK.
+  </p>
+
+  <h2>PONG</h2>
+
+  <p>This is a small Pong ActionScript 3 MVCS game using:</p>
+  <ul>
+    <li>Starling</li>
+    <li>Feathers for rendering/UI</li>
+    <li>Robotlegs</li>
+    <li>Signals</li>
+    <li>Swiftsuspenders for DI and app structure</li>
+  </ul>
+
+  <p>
+    Originally created as an experiment in 2014. The project demonstrates the
+    use of the Robotlegs MVC pattern alongside Stage3D, Signals and Feathers for
+    a clean, modular architecture. The project dependency code had to be
+    modified to work, so '.swc' files were not used. They are still included in
+    the repo for reference.
+  </p>
+
+  <figure class="project-item-container">
+    <a
+      href="https://macetini.github.io/assets/harman-air/img/harman_air_pong.webp"
+      class="lightbox-trigger"
+    >
+      <img
+        class="project-image"
+        src="https://macetini.github.io/assets/harman-air/img/harman_air_pong.webp"
+        alt="As3 Pong Game Gameplay Screenshot"
+      />
+    </a>
+    <figcaption>As3 Pong Game Gameplay Screenshot.</figcaption>
+  </figure>
+
+  <p>While visually not that impressive, there is a lot under the hood.</p>
+
+  <h3>(Modernized)Tech Stack</h3>
+
+  <ul>
+    <li>Harman Adobe AIR (v51.2.1.0)</li>
+    <li>Starling Framework</li>
+    <li>Feathers UI</li>
+    <li>Robotlegs (MVCS)</li>
+    <li>SwiftSuspenders (Dependency Injection)</li>
+  </ul>
+
+  <figure class="project-item-container">
+    <a
+      href="https://macetini.github.io/assets/harman-air/svg/harman_air_pong_graph.svg"
+      class="lightbox-trigger"
+    >
+      <img
+        class="project-image"
+        width="100%"
+        height="100%"
+        src="https://macetini.github.io/assets/harman-air/svg/harman_air_pong_graph.svg"
+        alt="As3 Pong Game Architecture Diagram"
+      />
+    </a>
+    <figcaption>
+      As3 Pong Game Architecture Diagram (created with Graphviz)
+    </figcaption>
+  </figure>
+
+  <p>Entry / boot sequence:</p>
+  <ul>
+    <li>
+      Main creates Starling and Robotlegs context and runs configuration in
+      AppConfig.
+    </li>
+    <li>
+      App config fragments DI/bootstrapping into small bootstrap classes under
+      bootstraps:
+    </li>
+    <li>Models: BootstrapModels</li>
+    <li>Signals: BootstrapSignals</li>
+    <li>Signal → Command bindings: BootstrapSignalCommandMap</li>
+    <li>Mediator mappings: BootstrapMediatorMap</li>
+    <li>Services: BootstrapServices</li>
+    <li>Utils: BootstrapUtils</li>
+  </ul>
+
+  <p>
+    The system can be adapted for any kind of project. It was created with
+    modularity in mind, allowing for easy extension and customization.
+  </p>
+
+  <h2>Midas Miner</h2>
+
+  <p>
+    I also created a small Midas Miner clone to showcase the framework
+    capabilities. The game was one of my first gaming projects back in 2013 when
+    I was learning game development.
+  </p>
+
+  <figure class="project-item-container">
+    <a
+      href="https://macetini.github.io/assets/harman-air/mov/harman_air_midas_miner_anim.webm"
+      class="lightbox-trigger"
+    >
+      <video
+        class="project-video"
+        alt="Midas Miner Gameplay Animation"
+        autoplay
+        loop
+        muted
+        playsinline
+      >
+        <source
+          src="https://macetini.github.io/assets/harman-air/mov/harman_air_midas_miner_anim.webm"
+          type="video/webm"
+        />
+        <source
+          src="https://macetini.github.io/assets/harman-air/mov/harman_air_midas_miner_anim.mp4"
+          type="video/mp4"
+        />
+
+        <track
+          kind="descriptions"
+          label="Visual Description"
+          srclang="en"
+          src="https://macetini.github.io/assets/harman-air/mov/harman_air_midas_miner_anim_en.vtt"
+          default
+        />
+
+        Your browser does not support the video tag.
+      </video>
+    </a>
+    <figcaption>Midas Miner Gameplay Animation</figcaption>
+  </figure>
+
+  <ul>
+    <li>
+      <a href="#harman-air">Back To Summary</a>
+    </li>
+    <li>
+      <a href="#top">Back To Top</a>
+    </li>
+  </ul>
+
+  <p class="detail-trigger" data-target-id="harman-air-details">
+    Close Details
+  </p>
+</div>
