@@ -73,9 +73,9 @@ function onHtmlLoaded(html, element) {
   const codeBlocks = document.querySelectorAll("code[data-src]");
 
   for (const codeElement of codeBlocks) {
-    const filePath = codeElement.dataset.src;
+    const fileUrl = codeElement.dataset.contentUrl;
 
-    fetch(filePath)
+    fetch(fileUrl)
       .then((response) => {
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
@@ -87,7 +87,7 @@ function onHtmlLoaded(html, element) {
         codeElement.textContent = fileContent;
       })
       .catch((error) => {
-        codeElement.textContent = `Error loading file: ${filePath}`;
+        codeElement.textContent = `Error loading URL: ${fileUrl}`;
         console.error("Fetch error:", error);
       });
   }
