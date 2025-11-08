@@ -73,7 +73,7 @@ function onHtmlLoaded(html, element) {
   const codeBlocks = document.querySelectorAll("code[data-src]");
 
   for (const codeElement of codeBlocks) {
-    const fileUrl = codeElement.dataset.contentUrl;
+    const fileUrl = codeElement.dataset.src;
 
     fetch(fileUrl)
       .then((response) => {
